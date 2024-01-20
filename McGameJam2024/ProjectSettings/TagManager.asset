@@ -8,6 +8,10 @@ TagManager:
   - EnemyWall
   - PlayerBullet
   - EnemyBullet
+  - Enemy
+  - rookPowerUp
+  - bishopPowerUp
+  - queenPowerUp
   layers:
   - Default
   - TransparentFX
