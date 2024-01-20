@@ -6,6 +6,9 @@ public class PlayerHat : MonoBehaviour
 {
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        this.gameObject.SetActive(false);
+        if (!collision.gameObject.CompareTag("StickyItem"))
+        {
+            this.gameObject.SetActive(false);
+        }
     }
 }
