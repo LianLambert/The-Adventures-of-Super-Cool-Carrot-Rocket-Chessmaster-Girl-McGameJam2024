@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerBullets : MonoBehaviour
+public class PlayerBulletSpawner : MonoBehaviour
 {
     [SerializeField] GameObject bullet;
     public float bulletCooldownTime = 0.05f;
