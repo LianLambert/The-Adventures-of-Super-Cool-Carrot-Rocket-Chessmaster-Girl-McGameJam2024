@@ -4,15 +4,16 @@ using UnityEngine;
 
 public class PlayerBulletSpawner : MonoBehaviour
 {
-    [SerializeField] GameObject bullet;
-    public float bulletCooldownTime = 0.05f;
-    public float bulletCooldownTimer = 0.0f;
+    [SerializeField] private GameObject bullet;
+    [SerializeField] private float bulletCooldownTime = 0.05f;
+    private float bulletCooldownTimer = 0.0f;
+    private bool shooting = false;
+
     public bool basicShots = true;
     public bool rookShots = false;
     public bool bishopShots = false;
-    private bool shooting = false;
-    
-    
+
+
 
     // Start is called before the first frame update
     void Start()
@@ -45,7 +46,10 @@ public class PlayerBulletSpawner : MonoBehaviour
 
     void UpdateTimers()
     {
-        bulletCooldownTimer -= Time.deltaTime;
+        if (bulletCooldownTimer > 0)
+        {
+            bulletCooldownTimer -= Time.deltaTime;
+        }
     }
 
     void Shoot()

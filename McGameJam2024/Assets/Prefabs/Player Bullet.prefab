@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4437831676168106443}
   - component: {fileID: 7747072224381452368}
   - component: {fileID: 2440005177192576271}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: Player Bullet
   m_TagString: Player Bullet
   m_Icon: {fileID: 0}
@@ -137,7 +137,7 @@ CapsuleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
