@@ -63,7 +63,7 @@ public class Wrench : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.GetComponent<Collider>().gameObject.CompareTag("PlayerBullet"))
+        if (collision.GetComponent<Collider2D>().gameObject.CompareTag("PlayerBullet"))
         {
             OnHit();
         }
