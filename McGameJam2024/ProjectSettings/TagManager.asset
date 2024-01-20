@@ -43,3 +43,15 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: EnemyWall
+    uniqueID: 3685042341
+    locked: 0
+  - name: Background
+    uniqueID: 4261064209
+    locked: 0
+  - name: Wrench
+    uniqueID: 3738906269
+    locked: 0
+  - name: Player
+    uniqueID: 2784353411
+    locked: 0
