@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 081e5eb4f50b44849abaddddbb3681c1
+guid: 79a6168e1ee45664491f7e75ff21e9a1
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -110,13 +110,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: mecha_girl_0
+      name: straight_screw_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 16
-        height: 16
+        width: 8
+        height: 5
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,20 +124,41 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 26dae5942a1f0764eab89892199a31dc
-      internalID: 1232554063
+      spriteID: 658c3b92442ca03479c63f4fef2d751c
+      internalID: -852066689
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: mecha_girl_1
+      name: straight_screw_1
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 0
+        width: 8
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd2fb2079b1f47f4a8bfd623eb55bcc5
+      internalID: -932228676
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: straight_screw_2
       rect:
         serializedVersion: 2
         x: 16
         y: 0
-        width: 16
-        height: 16
+        width: 8
+        height: 5
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -145,50 +166,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3d47240ddc39c7944a3ed8025b4ed485
-      internalID: 2107842219
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: mecha_girl_2
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 0
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 480f7910aca40234d9a407defd2597c6
-      internalID: 232949472
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: mecha_girl_3
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 0
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2ef1c44aac9b50347b369cdbb7363932
-      internalID: 460910176
+      spriteID: 6ba5082895d1e8345ad298a822a770e5
+      internalID: -1339600476
       vertices: []
       indices: 
       edges: []
@@ -204,10 +183,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      mecha_girl_0: 1232554063
-      mecha_girl_1: 2107842219
-      mecha_girl_2: 232949472
-      mecha_girl_3: 460910176
+      straight_screw_0: -852066689
+      straight_screw_1: -932228676
+      straight_screw_2: -1339600476
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
