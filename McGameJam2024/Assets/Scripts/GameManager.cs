@@ -32,7 +32,7 @@ public class GameManager : MonoBehaviour
         // Updating fields with current game time
         timer += Time.deltaTime;
         waveTimer += Time.deltaTime;
-        difficulty = (int)Math.Clamp((timer / 3f),0f,7f);
+        difficulty = (int)Math.Clamp((timer / 15f),0f,7f);
         waveRate = 2 + (7 - difficulty);
 
         // Looking if an enemy should be spawned
