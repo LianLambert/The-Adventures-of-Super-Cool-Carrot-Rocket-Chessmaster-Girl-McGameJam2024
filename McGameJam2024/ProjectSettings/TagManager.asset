@@ -13,6 +13,7 @@ TagManager:
   - bishopPowerUp
   - queenPowerUp
   - StickyItem
+  - Gear
   layers:
   - Default
   - TransparentFX
@@ -47,9 +48,6 @@ TagManager:
   - 
   - 
   m_SortingLayers:
-  - name: Default
-    uniqueID: 0
-    locked: 0
   - name: EnemyWall
     uniqueID: 3685042341
     locked: 0
@@ -64,6 +62,9 @@ TagManager:
     locked: 0
   - name: Gear
     uniqueID: 632770357
+    locked: 0
+  - name: Default
+    uniqueID: 0
     locked: 0
   - name: Player
     uniqueID: 2784353411

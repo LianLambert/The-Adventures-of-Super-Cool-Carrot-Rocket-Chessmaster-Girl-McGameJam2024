@@ -15,6 +15,8 @@ public class PlayerBulletSpawner : MonoBehaviour
     [SerializeField] public bool basicShots = true;
     [SerializeField] public bool rookShots = false;
     [SerializeField] public bool bishopShots = false;
+    [SerializeField] public bool attachedToPlayer = false;
+    [SerializeField] public float bulletTime = 10.0f;
 
     // Start is called before the first frame update
     void Start()
@@ -25,12 +27,17 @@ public class PlayerBulletSpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        CheckShooting();
-        UpdateTimers();
-        if (shooting && bulletCooldownTimer <= 0)
+        if (attachedToPlayer)
         {
-            Shoot();
+            UpdateTimers();
+            CheckShooting();
+
+            if (shooting && bulletCooldownTimer <= 0)
+            {
+                Shoot();
+            }
         }
+        
     }
 
     void CheckShooting()
@@ -88,34 +95,43 @@ public class PlayerBulletSpawner : MonoBehaviour
         {
             GameObject bullet0 = Instantiate(playerBullet, transform.position, Quaternion.identity);
             bullet0.GetComponent<PlayerBullet>().direction = new Vector3(1, 0, 0).normalized;
+            Destroy(bullet0, bulletTime);
         }
         if (rookShots)
         {
             GameObject bulletN = Instantiate(playerBullet, transform.position, Quaternion.Euler(0, 0, 90));
             bulletN.GetComponent<PlayerBullet>().direction = new Vector3(0, 1, 0).normalized;
+            Destroy(bulletN, bulletTime);
 
             GameObject bulletE = Instantiate(playerBullet, transform.position, Quaternion.Euler(0, 0, 0));
             bulletE.GetComponent<PlayerBullet>().direction = new Vector3(1, 0, 0).normalized;
+            Destroy(bulletE, bulletTime);
 
             GameObject bulletS = Instantiate(playerBullet, transform.position, Quaternion.Euler(0, 0, -90));
             bulletS.GetComponent<PlayerBullet>().direction = new Vector3(0, -1, 0).normalized;
+            Destroy(bulletS, bulletTime);
 
             GameObject bulletW = Instantiate(playerBullet, transform.position, Quaternion.Euler(0, 0, 180));
             bulletW.GetComponent<PlayerBullet>().direction = new Vector3(-1, 0, 0).normalized;
+            Destroy(bulletW, bulletTime);
         }
         if (bishopShots)
         {
             GameObject bulletNW = Instantiate(playerBullet, transform.position, Quaternion.Euler(0, 0, 135));
             bulletNW.GetComponent<PlayerBullet>().direction = new Vector3(-1, 1, 0).normalized;
+            Destroy(bulletNW, bulletTime);
 
             GameObject bulletNE = Instantiate(playerBullet, transform.position, Quaternion.Euler(0, 0, 45));
             bulletNE.GetComponent<PlayerBullet>().direction = new Vector3(1, 1, 0).normalized;
+            Destroy(bulletNE, bulletTime);
 
             GameObject bulletSE = Instantiate(playerBullet, transform.position, Quaternion.Euler(0, 0, -45));
             bulletSE.GetComponent<PlayerBullet>().direction = new Vector3(1, -1, 0).normalized;
+            Destroy(bulletSE, bulletTime);
 
             GameObject bulletSW = Instantiate(playerBullet, transform.position, Quaternion.Euler(0, 0, -135));
             bulletSW.GetComponent<PlayerBullet>().direction = new Vector3(-1, -1, 0).normalized;
+            Destroy(bulletSW, bulletTime);
         }
 
         

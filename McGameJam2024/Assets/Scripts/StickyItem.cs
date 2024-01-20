@@ -5,14 +5,12 @@ using UnityEngine;
 
 public class StickyItem : MonoBehaviour
 {
-    [SerializeField] private Rigidbody2D rb;
     public bool stuckToPlayer = false;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        rb = this.gameObject.GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
@@ -43,6 +41,7 @@ public class StickyItem : MonoBehaviour
             {
                 // make this object a child of the player
                 transform.SetParent(collision.gameObject.transform);
+                this.gameObject.GetComponent<PlayerBulletSpawner>().attachedToPlayer = true;
                 stuckToPlayer = true;
 
             }
@@ -52,6 +51,7 @@ public class StickyItem : MonoBehaviour
             {
                 // make this object a child of the other StickyItem
                 transform.SetParent(collision.gameObject.transform);
+                this.gameObject.GetComponent<PlayerBulletSpawner>().attachedToPlayer = true;
                 stuckToPlayer = true;
             }
         }
@@ -78,6 +78,7 @@ public class StickyItem : MonoBehaviour
             {
                 // make this object a child of the player
                 transform.SetParent(collision.gameObject.transform);
+                this.gameObject.GetComponent<PlayerBulletSpawner>().attachedToPlayer = true;
                 stuckToPlayer = true;
 
             }
@@ -87,9 +88,11 @@ public class StickyItem : MonoBehaviour
             {
                 // make this object a child of the other StickyItem
                 transform.SetParent(collision.gameObject.transform);
+                this.gameObject.GetComponent<PlayerBulletSpawner>().attachedToPlayer = true;
                 stuckToPlayer = true;
             }
         }
 
     }
+
 }
