@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 79a6168e1ee45664491f7e75ff21e9a1
+guid: dc001bcc7719d2840bc812adca8c3675
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -110,7 +110,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: straight_screw_0
+      name: saw_0
       rect:
         serializedVersion: 2
         x: 0
@@ -124,14 +124,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 658c3b92442ca03479c63f4fef2d751c
-      internalID: -852066689
+      spriteID: cf82a2a1056b18a41b4f0011127d74bc
+      internalID: 309198360
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: straight_screw_1
+      name: saw_1
       rect:
         serializedVersion: 2
         x: 16
@@ -145,14 +145,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dd2fb2079b1f47f4a8bfd623eb55bcc5
-      internalID: -932228676
+      spriteID: 1f424421788c78c40812d21ebbf642c0
+      internalID: -366107535
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: straight_screw_2
+      name: saw_2
       rect:
         serializedVersion: 2
         x: 32
@@ -166,8 +166,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6ba5082895d1e8345ad298a822a770e5
-      internalID: -1339600476
+      spriteID: 5477ff680360c1d4c9a09df84d29523d
+      internalID: 133710265
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: saw_3
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b0ca178479387d4fa0230243f97b3bf
+      internalID: 330845120
       vertices: []
       indices: 
       edges: []
@@ -183,9 +204,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      straight_screw_0: -852066689
-      straight_screw_1: -932228676
-      straight_screw_2: -1339600476
+      saw_0: 309198360
+      saw_1: -366107535
+      saw_2: 133710265
+      saw_3: 330845120
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
