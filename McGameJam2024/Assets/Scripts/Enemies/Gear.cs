@@ -12,6 +12,7 @@ public class Gear : MonoBehaviour
     // Enemy fields
     private int health = 2;
     private float time = 0f;
+    private float amp;
     private float shootingTime = 0f;
     private float chargeTime = 0f;
     private bool goingUp;
@@ -31,6 +32,9 @@ public class Gear : MonoBehaviour
     void Start()
     {
         health = 2 + gameManager.difficulty;
+
+        // Random amplitude
+        amp = UnityEngine.Random.Range(0.5f, 3f);
     }
 
     // Update is called once per frame
@@ -48,7 +52,7 @@ public class Gear : MonoBehaviour
 
             // Sin movement
             float x = 2 * time;
-            float y = (float)(2 * (Math.Sin(x)));
+            float y = (float)(amp * (Math.Sin(x)));
             animator.SetFloat("Vert_speed", y);
 
             // Moving in increments
