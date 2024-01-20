@@ -18,8 +18,9 @@ public class playerBullet : MonoBehaviour
         transform.position += direction * bulletSpeed * Time.deltaTime;
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         Debug.Log("Colided with: " + collision.gameObject);
+        Destroy(this.gameObject);
     }
 }
