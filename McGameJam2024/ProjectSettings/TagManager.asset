@@ -48,9 +48,6 @@ TagManager:
   - name: EnemyWall
     uniqueID: 3685042341
     locked: 0
-  - name: Wall
-    uniqueID: 2144684243
-    locked: 0
   - name: Background
     uniqueID: 4261064209
     locked: 0

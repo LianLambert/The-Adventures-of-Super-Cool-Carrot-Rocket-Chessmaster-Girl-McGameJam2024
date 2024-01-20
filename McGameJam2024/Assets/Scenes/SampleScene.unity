@@ -132,17 +132,6 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 4632381890961762859, guid: 57a50f0bc088d9041a9cfcca6baf0381, type: 3}
-<<<<<<< Updated upstream
-=======
-      propertyPath: m_SortingLayer
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4632381890961762859, guid: 57a50f0bc088d9041a9cfcca6baf0381, type: 3}
-      propertyPath: m_SortingLayerID
-      value: -1510613885
-      objectReference: {fileID: 0}
-    - target: {fileID: 4632381890961762859, guid: 57a50f0bc088d9041a9cfcca6baf0381, type: 3}
->>>>>>> Stashed changes
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
@@ -358,8 +347,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -33903087
-  m_SortingLayer: 3
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 0.54249734, g: 0.5516966, b: 0.6886792, a: 1}
@@ -676,8 +665,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 1674543679
-  m_SortingLayer: 6
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -912,7 +901,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timer: 0
   difficulty: 0
-  waveTimer: 8
+  waveTimer: 7
   waveRate: 9
   powerupRate: 2
   weaponRate: 2
@@ -1039,7 +1028,7 @@ Camera:
   far clip plane: 1000
   field of view: 34
   orthographic: 1
-  orthographic size: 5.203125
+  orthographic size: 5.2083335
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -1131,7 +1120,7 @@ MonoBehaviour:
   m_Intensity: 1
   m_LightVolumeIntensity: 1
   m_LightVolumeIntensityEnabled: 0
-  m_ApplyToSortingLayers: 00000000fde088ff3f82cf63d348d57f
+  m_ApplyToSortingLayers: 00000000fde088ff3f82cf63
   m_LightCookieSprite: {fileID: 0}
   m_DeprecatedPointLightCookieSprite: {fileID: 0}
   m_LightOrder: 0
