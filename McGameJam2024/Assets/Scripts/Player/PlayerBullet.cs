@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class playerBullet : MonoBehaviour
+public class PlayerBullet : MonoBehaviour
 {
     [SerializeField] private float bulletSpeed = 5.0f;
     public Vector3 direction;
@@ -20,7 +20,6 @@ public class playerBullet : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("Colided with: " + collision.gameObject);
         Destroy(this.gameObject);
     }
 }

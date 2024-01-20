@@ -12,7 +12,7 @@ TagManager:
   - rookPowerUp
   - bishopPowerUp
   - queenPowerUp
-  - stickyItem
+  - StickyItem
   layers:
   - Default
   - TransparentFX
