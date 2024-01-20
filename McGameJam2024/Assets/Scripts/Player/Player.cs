@@ -6,6 +6,10 @@ public class Player : MonoBehaviour
 {
     [SerializeField] private float moveSpeed = 5.0f;
     [SerializeField] private float scrollSpeed = 2.5f;
+    [SerializeField] private float xMin = -5.28f;
+    [SerializeField] private float xMax = 5.04f;
+    [SerializeField] private float yMin = -3.85f;
+    [SerializeField] private float yMax = 3.55f;
     private GameObject playerManager;
     private GameObject bishopHat;
     private GameObject rookHat;
@@ -49,6 +53,10 @@ public class Player : MonoBehaviour
         {
             pos.x += moveSpeed * Time.deltaTime;
         }
+
+        // Clamp the position values
+        pos.x = Mathf.Clamp(pos.x, xMin, xMax);
+        pos.y = Mathf.Clamp(pos.y, yMin, yMax);
 
         transform.position = pos;
     }
