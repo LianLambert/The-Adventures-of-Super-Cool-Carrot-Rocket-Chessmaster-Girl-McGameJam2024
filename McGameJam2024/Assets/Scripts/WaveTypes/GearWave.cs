@@ -26,7 +26,7 @@ public class GearWave : MonoBehaviour
         for (int i = 0; i < gearNum; i++)
         {
             // Random Y position on game space
-            float xPos = 10f;
+            float xPos = 7.5f;
             float yPos = 0f;
 
             GameObject.Instantiate(gear, new Vector3(xPos, yPos, 0f), Quaternion.identity);
