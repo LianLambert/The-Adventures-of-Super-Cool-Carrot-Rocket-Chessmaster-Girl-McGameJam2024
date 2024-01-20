@@ -6,6 +6,9 @@ public class Player : MonoBehaviour
 {
     [SerializeField] private float moveSpeed = 5.0f;
     [SerializeField] private Rigidbody2D rb;
+    [SerializeField] private GameObject bishopHat;
+    [SerializeField] private GameObject rookHat;
+    [SerializeField] private GameObject queenHat;
 
 
     // Start is called before the first frame update

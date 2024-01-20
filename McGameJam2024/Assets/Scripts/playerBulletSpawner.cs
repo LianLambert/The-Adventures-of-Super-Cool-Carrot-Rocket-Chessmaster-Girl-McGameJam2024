@@ -9,9 +9,9 @@ public class playerBulletSpawner : MonoBehaviour
     private float bulletCooldownTimer = 0.0f;
     private bool shooting = false;
 
-    public bool basicShots = true;
-    public bool rookShots = false;
-    public bool bishopShots = false;
+    [SerializeField] public bool basicShots = true;
+    [SerializeField] public bool rookShots = false;
+    [SerializeField] public bool bishopShots = false;
 
 
 
@@ -63,30 +63,30 @@ public class playerBulletSpawner : MonoBehaviour
         }
         if (rookShots)
         {
-            GameObject bulletN = Instantiate(playerBullet, transform.position, Quaternion.identity);
+            GameObject bulletN = Instantiate(playerBullet, transform.position, Quaternion.Euler(0, 0, 90));
             bulletN.GetComponent<playerBullet>().direction = new Vector3(0, 1, 0).normalized;
 
-            GameObject bulletE = Instantiate(playerBullet, transform.position, Quaternion.identity);
+            GameObject bulletE = Instantiate(playerBullet, transform.position, Quaternion.Euler(0, 0, 0));
             bulletE.GetComponent<playerBullet>().direction = new Vector3(1, 0, 0).normalized;
 
-            GameObject bulletS = Instantiate(playerBullet, transform.position, Quaternion.identity);
+            GameObject bulletS = Instantiate(playerBullet, transform.position, Quaternion.Euler(0, 0, -90));
             bulletS.GetComponent<playerBullet>().direction = new Vector3(0, -1, 0).normalized;
 
-            GameObject bulletW = Instantiate(playerBullet, transform.position, Quaternion.identity);
+            GameObject bulletW = Instantiate(playerBullet, transform.position, Quaternion.Euler(0, 0, 180));
             bulletW.GetComponent<playerBullet>().direction = new Vector3(-1, 0, 0).normalized;
         }
         if (bishopShots)
         {
-            GameObject bulletNW = Instantiate(playerBullet, transform.position, Quaternion.identity);
+            GameObject bulletNW = Instantiate(playerBullet, transform.position, Quaternion.Euler(0, 0, 135));
             bulletNW.GetComponent<playerBullet>().direction = new Vector3(-1, 1, 0).normalized;
 
-            GameObject bulletNE = Instantiate(playerBullet, transform.position, Quaternion.identity);
+            GameObject bulletNE = Instantiate(playerBullet, transform.position, Quaternion.Euler(0, 0, 45));
             bulletNE.GetComponent<playerBullet>().direction = new Vector3(1, 1, 0).normalized;
 
-            GameObject bulletSE = Instantiate(playerBullet, transform.position, Quaternion.identity);
+            GameObject bulletSE = Instantiate(playerBullet, transform.position, Quaternion.Euler(0, 0, -45));
             bulletSE.GetComponent<playerBullet>().direction = new Vector3(1, -1, 0).normalized;
 
-            GameObject bulletSW = Instantiate(playerBullet, transform.position, Quaternion.identity);
+            GameObject bulletSW = Instantiate(playerBullet, transform.position, Quaternion.Euler(0, 0, -135));
             bulletSW.GetComponent<playerBullet>().direction = new Vector3(-1, -1, 0).normalized;
         }
 
