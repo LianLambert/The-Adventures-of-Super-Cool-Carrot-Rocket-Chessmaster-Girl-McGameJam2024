@@ -51,9 +51,9 @@ public class Wrench : MonoBehaviour
         GameObject.Destroy(this);
     }
 
-    void OnCollisionEnter2D(Collision2D collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.collider.gameObject.tag == "EnemyWall") {
+        if(collision.collider.gameObject.CompareTag("EnemyWall")) {
             GameObject.Destroy(this.gameObject);
         }
         else if(collision.collider.gameObject.tag == "Bullet")
