@@ -51,12 +51,10 @@ public class Wrench : MonoBehaviour
         GameObject.Destroy(this);
     }
 
-    void OnCollisionEnter(Collision collision)
+    void OnCollisionEnter2D(Collision2D collision)
     {
-        Debug.Log("Collision!");
-        if (collision.collider.gameObject.layer == 1 << 6)
-        {
-            GameObject.Destroy(this);
-        }
+        Debug.Log("collided!");
+        GameObject.Destroy(this.gameObject);
+        
     }
 }
