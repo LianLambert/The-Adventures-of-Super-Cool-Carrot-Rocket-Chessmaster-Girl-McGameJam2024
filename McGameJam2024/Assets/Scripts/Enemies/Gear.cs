@@ -11,6 +11,7 @@ public class Gear : MonoBehaviour
     // Enemy fields
     private int health = 2;
     private float time = 0f;
+    private float shootingTime = 0f;
 
     void Awake()
     {
@@ -27,9 +28,28 @@ public class Gear : MonoBehaviour
     void Update()
     {
         time += Time.deltaTime;
+        shootingTime += Time.deltaTime;
+
+        // Sin movement
         float x = 2 * time;
         float y = (float) (2*(Math.Sin(x)));
         transform.position =  new Vector3(10f,0f,0f) - new Vector3(x, y, 0f);
+
+        // Shooting
+        if(shootingTime >= 2f)
+        {
+            StartCoroutine(Shoot());
+            shootingTime = 0f;
+        }
+
+
+    }
+
+    IEnumerator Shoot()
+    {
+        this.GetComponent<Animator>().SetTrigger("shoot");
+        yield return new WaitForSeconds(2f);
+        this.GetComponent<Animator>().ResetTrigger("shoot");
     }
 
     // Behaviour when the enemy is hit
