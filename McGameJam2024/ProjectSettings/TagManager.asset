@@ -51,6 +51,9 @@ TagManager:
   - name: Background
     uniqueID: 4261064209
     locked: 0
+  - name: Wall
+    uniqueID: 1587259467
+    locked: 0
   - name: Wrench
     uniqueID: 3738906269
     locked: 0
