@@ -17,6 +17,11 @@ public class GameManager : MonoBehaviour
     public int weaponRate = 2;
     public int waveCounter = 0;
 
+    // Prefabs
+    [SerializeField] GameObject bishopPowerup;
+    [SerializeField] GameObject rookPowerup;
+    [SerializeField] GameObject queenPowerup;
+
     // Wave Types
     [SerializeField] WrenchWave wrenchWave;
 
@@ -56,6 +61,10 @@ public class GameManager : MonoBehaviour
 
     public void EnemyDown(GameObject enemy)
     {
+        // Enemy transform
+        Vector3 enemyPos = enemy.transform.position;
+        Quaternion enemyQuat = enemy.transform.rotation;
+
         // Enemies can drop weapons
         int randomIntWpn = UnityEngine.Random.Range(1, 11);
 
@@ -73,7 +82,26 @@ public class GameManager : MonoBehaviour
             // Powerup roll 
             if (randomIntPwrUp <= powerupRate)
             {
-                // Spawn powerup
+                // Making the queen powerup rarer
+                int rng = UnityEngine.Random.Range(1, 101);
+
+                // Rook powerup
+                if(rng <= 45)
+                {
+                    GameObject.Instantiate(rookPowerup, enemyPos, enemyQuat);
+                }
+
+                // Bishop powerup
+                if(rng <= 90 && rng > 45)
+                {
+                    GameObject.Instantiate(bishopPowerup, enemyPos, enemyQuat);
+                }
+
+                // Queen powerup
+                if(rng > 90)
+                {
+                    GameObject.Instantiate(queenPowerup,  enemyPos, enemyQuat);
+                }
             }
 
         }

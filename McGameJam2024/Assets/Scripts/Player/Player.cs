@@ -49,27 +49,31 @@ public class Player : MonoBehaviour
         transform.position = pos;
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
         // hat collisions
         if (other.gameObject.CompareTag("bishopPowerUp"))
         {
+            
             bishopHat.SetActive(true);
             rookHat.SetActive(false);
             queenHat.SetActive(false);
+            Destroy(other.gameObject);
 
         }
         else if (other.gameObject.CompareTag("rookPowerUp"))
         {
+            Destroy(other.gameObject);
             bishopHat.SetActive(false);
             rookHat.SetActive(true);
             queenHat.SetActive(false);
         }
         else if (other.gameObject.CompareTag("queenPowerUp"))
         {
+            Destroy(other.gameObject);
             bishopHat.SetActive(false);
             rookHat.SetActive(false);
-            queenHat.SetActive(false);
+            queenHat.SetActive(true);
         }
     }
 }
