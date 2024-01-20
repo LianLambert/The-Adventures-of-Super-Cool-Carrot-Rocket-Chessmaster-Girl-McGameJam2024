@@ -7,18 +7,6 @@ public class StickyItem : MonoBehaviour
 {
     public bool stuckToPlayer = false;
 
-
-    // Start is called before the first frame update
-    void Start()
-    {
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     // NOTE: used both OnTriggerEnter2D and OnCollisionEnter2D just to make sure to cover all bases
 
     // assuming StickyItems are NOT triggers but that enemies and enemy bullets are

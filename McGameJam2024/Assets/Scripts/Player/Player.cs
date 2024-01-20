@@ -6,15 +6,19 @@ public class Player : MonoBehaviour
 {
     [SerializeField] private float moveSpeed = 5.0f;
     [SerializeField] private float scrollSpeed = 2.5f;
-    [SerializeField] private Rigidbody2D rb;
-    [SerializeField] private GameObject bishopHat;
-    [SerializeField] private GameObject rookHat;
-    [SerializeField] private GameObject queenHat;
+    private GameObject playerManager;
+    private GameObject bishopHat;
+    private GameObject rookHat;
+    private GameObject queenHat;
+    
 
     // Start is called before the first frame update
     void Start()
     {
-        rb = this.GetComponent<Rigidbody2D>();
+        playerManager = GameObject.Find("playerManager");
+        bishopHat = playerManager.GetComponent<playerManager>().bishopHat;
+        rookHat = playerManager.GetComponent<playerManager>().rookHat;
+        queenHat = playerManager.GetComponent<playerManager>().queenHat;
     }
 
     // Update is called once per frame

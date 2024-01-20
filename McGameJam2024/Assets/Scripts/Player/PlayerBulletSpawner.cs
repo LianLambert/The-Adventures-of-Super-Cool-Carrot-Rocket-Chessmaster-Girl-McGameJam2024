@@ -5,23 +5,29 @@ using UnityEngine;
 public class PlayerBulletSpawner : MonoBehaviour
 {
     [SerializeField] private GameObject playerBullet;
+    [SerializeField] private float bulletTime = 10.0f;
     [SerializeField] private float bulletCooldownTime = 0.05f;
     private float bulletCooldownTimer = 0.0f;
     private bool shooting = false;
-
-    [SerializeField] private GameObject bishopHat;
-    [SerializeField] private GameObject rookHat;
-    [SerializeField] private GameObject queenHat;
-    [SerializeField] public bool basicShots = true;
-    [SerializeField] public bool rookShots = false;
-    [SerializeField] public bool bishopShots = false;
     [SerializeField] public bool attachedToPlayer = false;
-    [SerializeField] public float bulletTime = 10.0f;
+
+    private GameObject playerManager;
+    private GameObject bishopHat;
+    private GameObject rookHat;
+    private GameObject queenHat;
+    [SerializeField] private bool basicShots = true;
+    [SerializeField] private bool rookShots = false;
+    [SerializeField] private bool bishopShots = false;
+    
+    
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        playerManager = GameObject.Find("playerManager");
+        bishopHat = playerManager.GetComponent<playerManager>().bishopHat;
+        rookHat = playerManager.GetComponent<playerManager>().rookHat;
+        queenHat = playerManager.GetComponent<playerManager>().queenHat;
     }
 
     // Update is called once per frame
