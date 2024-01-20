@@ -132,7 +132,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 29779272}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Bishop Guns
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -169,6 +169,10 @@ PrefabInstance:
     - target: {fileID: 5766680046722677861, guid: 57a50f0bc088d9041a9cfcca6baf0381, type: 3}
       propertyPath: m_Name
       value: Player1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5766680046722677861, guid: 57a50f0bc088d9041a9cfcca6baf0381, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 6191411714609127400, guid: 57a50f0bc088d9041a9cfcca6baf0381, type: 3}
       propertyPath: m_RootOrder
@@ -428,7 +432,7 @@ GameObject:
   - component: {fileID: 123876337}
   - component: {fileID: 123876339}
   - component: {fileID: 123876338}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: topLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5256,7 +5260,7 @@ GameObject:
   - component: {fileID: 139972198}
   - component: {fileID: 139972200}
   - component: {fileID: 139972201}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5386,7 +5390,7 @@ GameObject:
   - component: {fileID: 167796195}
   - component: {fileID: 167796197}
   - component: {fileID: 167796196}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: top
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10332,7 +10336,7 @@ GameObject:
   - component: {fileID: 197793791}
   - component: {fileID: 197793793}
   - component: {fileID: 197793794}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Top
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10462,7 +10466,7 @@ GameObject:
   - component: {fileID: 348851776}
   - component: {fileID: 348851778}
   - component: {fileID: 348851777}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Basic Gun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15599,7 +15603,7 @@ GameObject:
   - component: {fileID: 637054778}
   - component: {fileID: 637054780}
   - component: {fileID: 637054779}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20427,7 +20431,7 @@ GameObject:
   - component: {fileID: 775266407}
   - component: {fileID: 775266409}
   - component: {fileID: 775266408}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25255,7 +25259,7 @@ GameObject:
   - component: {fileID: 954133476}
   - component: {fileID: 954133478}
   - component: {fileID: 954133477}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: bottom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30083,7 +30087,7 @@ GameObject:
   - component: {fileID: 986156208}
   - component: {fileID: 986156210}
   - component: {fileID: 986156209}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: bottomRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34911,7 +34915,7 @@ GameObject:
   - component: {fileID: 1076971448}
   - component: {fileID: 1076971450}
   - component: {fileID: 1076971451}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Bottom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -35213,7 +35217,7 @@ GameObject:
   - component: {fileID: 1458288062}
   - component: {fileID: 1458288064}
   - component: {fileID: 1458288063}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: topRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40341,7 +40345,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1793178365}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Rook Guns
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40378,7 +40382,7 @@ GameObject:
   - component: {fileID: 1939529751}
   - component: {fileID: 1939529753}
   - component: {fileID: 1939529752}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: bottomLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -45241,7 +45245,7 @@ GameObject:
   - component: {fileID: 2042403371}
   - component: {fileID: 2042403373}
   - component: {fileID: 2042403374}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
