@@ -89,12 +89,16 @@ public class Gear : MonoBehaviour
     IEnumerator OnHit()
     {
         // Behaviour when the enemy is hit
-        if (health >= 0)
+        if (health > 0)
         {
             health--;
             this.gameObject.GetComponent<SpriteRenderer>().enabled = false;
             yield return new WaitForSeconds(0.1f);
             this.gameObject.GetComponent<SpriteRenderer>().enabled = true;
+        }
+        else
+        {
+            OnDestroyed();
         }
     }
     // Behaviour when the enemy is destroyed
