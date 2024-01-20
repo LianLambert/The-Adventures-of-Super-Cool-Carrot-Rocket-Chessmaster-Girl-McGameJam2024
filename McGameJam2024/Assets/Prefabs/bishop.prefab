@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6870707532585757950}
   - component: {fileID: 6496986529764735937}
   - component: {fileID: 6286828211283868605}
-  m_Layer: 8
+  m_Layer: 13
   m_Name: bishop
   m_TagString: bishopPowerUp
   m_Icon: {fileID: 0}

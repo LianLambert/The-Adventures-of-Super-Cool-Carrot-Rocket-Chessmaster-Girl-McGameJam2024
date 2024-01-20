@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7746771603971625916}
   - component: {fileID: 3184925722267181208}
   - component: {fileID: 8127403735927005076}
-  m_Layer: 8
+  m_Layer: 13
   m_Name: queen
   m_TagString: queenPowerUp
   m_Icon: {fileID: 0}

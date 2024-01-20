@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 650098435471830578}
   - component: {fileID: 1724022458081630454}
   - component: {fileID: 650308188744609993}
-  m_Layer: 8
+  m_Layer: 13
   m_Name: rook
   m_TagString: rookPowerUp
   m_Icon: {fileID: 0}

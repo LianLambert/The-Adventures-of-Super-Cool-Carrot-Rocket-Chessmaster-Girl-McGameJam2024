@@ -15,10 +15,16 @@ public class PlayerBullet : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         transform.position += direction * bulletSpeed * Time.deltaTime;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
+    {
+        Destroy(this.gameObject);
+    }
+
+    private void OnBecameInvisible()
     {
         Destroy(this.gameObject);
     }
