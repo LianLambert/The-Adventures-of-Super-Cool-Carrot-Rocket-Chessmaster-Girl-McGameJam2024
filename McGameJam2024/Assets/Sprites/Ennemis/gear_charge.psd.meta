@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 79a6168e1ee45664491f7e75ff21e9a1
+guid: 6833bf14582204b438a43f499b848dfc
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -110,7 +110,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: straight_screw_0
+      name: gear_charge_0
       rect:
         serializedVersion: 2
         x: 0
@@ -124,14 +124,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 658c3b92442ca03479c63f4fef2d751c
-      internalID: -852066689
+      spriteID: e74e50ff257dde94c90bf7e8bab09828
+      internalID: 1509244275
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: straight_screw_1
+      name: gear_charge_1
       rect:
         serializedVersion: 2
         x: 16
@@ -145,29 +145,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dd2fb2079b1f47f4a8bfd623eb55bcc5
-      internalID: -932228676
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: straight_screw_2
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 0
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6ba5082895d1e8345ad298a822a770e5
-      internalID: -1339600476
+      spriteID: 830a7ab09215ae942ab349ae0da06c5d
+      internalID: 1881077187
       vertices: []
       indices: 
       edges: []
@@ -183,9 +162,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      straight_screw_0: -852066689
-      straight_screw_1: -932228676
-      straight_screw_2: -1339600476
+      gear_charge_0: 1509244275
+      gear_charge_1: 1881077187
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
