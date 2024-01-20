@@ -14,6 +14,7 @@ public class Player : MonoBehaviour
     private GameObject bishopHat;
     private GameObject rookHat;
     private GameObject queenHat;
+    private Rigidbody2D rb;
     
 
     // Start is called before the first frame update
@@ -23,6 +24,8 @@ public class Player : MonoBehaviour
         bishopHat = playerManager.GetComponent<playerManager>().bishopHat;
         rookHat = playerManager.GetComponent<playerManager>().rookHat;
         queenHat = playerManager.GetComponent<playerManager>().queenHat;
+        rb = this.gameObject.GetComponent<Rigidbody2D>();
+        rb.constraints = RigidbodyConstraints2D.FreezeRotation;
     }
 
     // Update is called once per frame
