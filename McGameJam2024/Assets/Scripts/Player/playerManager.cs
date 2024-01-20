@@ -9,12 +9,19 @@ public class playerManager : MonoBehaviour
     [SerializeField] public GameObject rookHat;
     [SerializeField] public GameObject queenHat;
     [SerializeField] private TextMeshProUGUI scoreText;
+    [SerializeField] private TextMeshProUGUI waveText;
     private int score = 0;
 
     public void AddScore(int amount)
     {
         score += amount;
-        scoreText.text = "Score: " + score.ToString();
+        scoreText.text = "Score: " + score;
+
+    }
+
+    public void Wave(int amount)
+    {
+        waveText.text = "Wave: " + amount;
 
     }
 }
