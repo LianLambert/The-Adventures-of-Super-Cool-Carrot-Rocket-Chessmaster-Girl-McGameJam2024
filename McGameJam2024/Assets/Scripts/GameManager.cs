@@ -11,7 +11,7 @@ public class GameManager : MonoBehaviour
     // Game Fields
     public float timer = 0f;
     public int difficulty = 0;
-    public float waveTimer = 7f;
+    public float waveTimer = 8f;
     public float waveRate = 9f;
     public int powerupRate = 2;
     public int weaponRate = 2;

@@ -56,7 +56,7 @@ public class Wrench : MonoBehaviour
         if(collision.collider.gameObject.CompareTag("EnemyWall")) {
             GameObject.Destroy(this.gameObject);
         }
-        else if(collision.collider.gameObject.tag == "Bullet")
+        else if(collision.collider.gameObject.CompareTag("PlayerBullet"))
         {
             OnHit();
         }
