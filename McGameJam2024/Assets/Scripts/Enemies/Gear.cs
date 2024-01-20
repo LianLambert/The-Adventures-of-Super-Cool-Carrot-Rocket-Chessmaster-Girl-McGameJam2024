@@ -15,7 +15,6 @@ public class Gear : MonoBehaviour
     private float amp;
     private float shootingTime = 0f;
     private float chargeTime = 0f;
-    private bool goingUp;
     private bool shoot;
 
     // Prefabs
@@ -59,10 +58,10 @@ public class Gear : MonoBehaviour
             transform.position = new Vector3(7.5f, 0f, 0f) - new Vector3(x, y, 0f);
         }
 
-        
+
 
         // Shooting
-        if(shootingTime >= 2f)
+        if (shootingTime >= 2f)
         {
             StartCoroutine(Shoot());
             shootingTime = 0f;
@@ -83,24 +82,21 @@ public class Gear : MonoBehaviour
 
         animator.ResetTrigger("shoot");
         chargeTime += Time.deltaTime;
-        
-        shoot = false;
-        
-    }
 
-    // Behaviour when the enemy is hit
-    public void OnHit()
+        shoot = false;
+
+    }
+    IEnumerator OnHit()
     {
+        // Behaviour when the enemy is hit
         if (health >= 0)
         {
             health--;
-        }
-        else
-        {
-            OnDestroyed();
+            this.gameObject.GetComponent<SpriteRenderer>().enabled = false;
+            yield return new WaitForSeconds(0.1f);
+            this.gameObject.GetComponent<SpriteRenderer>().enabled = true;
         }
     }
-
     // Behaviour when the enemy is destroyed
     private void OnDestroyed()
     {
@@ -119,7 +115,7 @@ public class Gear : MonoBehaviour
     {
         if (collision.GetComponent<Collider2D>().gameObject.CompareTag("PlayerBullet"))
         {
-            OnHit();
+            StartCoroutine(OnHit());
         }
     }
 
