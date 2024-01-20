@@ -25,7 +25,6 @@ public class GameManager : MonoBehaviour
     // Wave Types
     [SerializeField] WrenchWave wrenchWave;
     [SerializeField] GearWave gearWave;
-    [SerializeField] WrenchGearWave wrenchgear;
 
     // Start is called before the first frame update
     void Start()
@@ -33,7 +32,6 @@ public class GameManager : MonoBehaviour
         // Getting waveTypes
         wrenchWave = GetComponent<WrenchWave>();
         gearWave = GetComponent<GearWave>();
-        wrenchgear = GetComponent<WrenchGearWave>();
     }
 
     // Update is called once per frame
@@ -61,10 +59,7 @@ public class GameManager : MonoBehaviour
                 case "gear":
                     gearWave.Wave();
                     break;
-
-                case "wrenchgear":
-                    wrenchgear.Wave();
-                    break;
+                
 
             }
         }
@@ -129,11 +124,7 @@ public class GameManager : MonoBehaviour
         {
             waveType = "all";
         }
-        else if (rng <= 5 * difficulty + 15)
-        {
-            waveType = "wrenchgear";
-        }
-        else if (rng <= 7 * difficulty + 20)
+        if (rng <= 7 * difficulty + 100)
         {
             waveType = "gear";
         }

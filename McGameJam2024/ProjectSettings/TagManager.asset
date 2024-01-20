@@ -14,7 +14,6 @@ TagManager:
   - queenPowerUp
   - StickyItem
   - Gear
-  - Wall
   layers:
   - Default
   - TransparentFX
