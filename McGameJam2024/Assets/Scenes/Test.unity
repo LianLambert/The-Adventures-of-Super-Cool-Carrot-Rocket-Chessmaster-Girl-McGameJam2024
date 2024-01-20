@@ -380,7 +380,7 @@ GameObject:
   - component: {fileID: 1116035280}
   m_Layer: 6
   m_Name: Square
-  m_TagString: Untagged
+  m_TagString: EnemyWall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -557,8 +557,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timer: 0
   difficulty: 0
-  waveTimer: 6
-  waveRate: 8
+  waveTimer: 7
+  waveRate: 9
   powerupRate: 2
   weaponRate: 2
   wrenchWave: {fileID: 0}

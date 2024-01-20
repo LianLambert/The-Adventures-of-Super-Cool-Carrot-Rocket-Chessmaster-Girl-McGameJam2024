@@ -11,8 +11,8 @@ public class GameManager : MonoBehaviour
     // Game Fields
     public float timer = 0f;
     public int difficulty = 0;
-    public float waveTimer = 6f;
-    public float waveRate = 8f;
+    public float waveTimer = 7f;
+    public float waveRate = 9f;
     public int powerupRate = 2;
     public int weaponRate = 2;
 
@@ -32,8 +32,8 @@ public class GameManager : MonoBehaviour
         // Updating fields with current game time
         timer += Time.deltaTime;
         waveTimer += Time.deltaTime;
-        difficulty = (int)Math.Clamp((timer / 15),0f,10f);
-        waveRate = 1 + (7 - difficulty);
+        difficulty = (int)Math.Clamp((timer / 3f),0f,7f);
+        waveRate = 2 + (7 - difficulty);
 
         // Looking if an enemy should be spawned
         if (waveTimer >= waveRate)

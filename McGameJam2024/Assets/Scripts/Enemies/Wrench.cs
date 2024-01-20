@@ -53,8 +53,10 @@ public class Wrench : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        Debug.Log("collided!");
-        GameObject.Destroy(this.gameObject);
+        if(collision.collider.gameObject.tag == "EnemyWall") {
+            GameObject.Destroy(this.gameObject);
+        }
+        
         
     }
 }
