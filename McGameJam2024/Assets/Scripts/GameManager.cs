@@ -15,6 +15,7 @@ public class GameManager : MonoBehaviour
     public float waveRate = 9f;
     public int powerupRate = 2;
     public int weaponRate = 2;
+    public int waveCounter = 0;
 
     // Wave Types
     [SerializeField] WrenchWave wrenchWave;
@@ -93,6 +94,7 @@ public class GameManager : MonoBehaviour
         else
             waveType = "wrench";
 
+        waveCounter++;
         return waveType;
     }
 
