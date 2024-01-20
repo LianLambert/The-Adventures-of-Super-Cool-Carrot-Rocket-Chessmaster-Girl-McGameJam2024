@@ -307,7 +307,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25fd5350f995949c19353ab71e3bba6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 8337338384906358947, guid: 48b84b8367a8a41f38e79b6c5b6bdaa6, type: 3}
+  playerBullet: {fileID: 8337338384906358947, guid: 48b84b8367a8a41f38e79b6c5b6bdaa6, type: 3}
   bulletCooldownTime: 0.25
   basicShots: 1
   rookShots: 0

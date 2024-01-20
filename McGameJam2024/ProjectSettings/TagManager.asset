@@ -6,8 +6,8 @@ TagManager:
   tags:
   - Wrench
   - EnemyWall
-  - Player Bullet
-  - Enemy Bullet
+  - PlayerBullet
+  - EnemyBullet
   layers:
   - Default
   - TransparentFX

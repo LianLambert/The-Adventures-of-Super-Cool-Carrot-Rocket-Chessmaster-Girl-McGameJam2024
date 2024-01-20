@@ -2,9 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Bullet : MonoBehaviour
+public class playerBullet : MonoBehaviour
 {
     [SerializeField] private float bulletSpeed = 5.0f;
+    public Vector3 direction;
 
     // Start is called before the first frame update
     void Start()
@@ -14,10 +15,10 @@ public class Bullet : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        transform.position += direction * bulletSpeed * Time.deltaTime;
     }
 
-    private void OnTriggerEnter2D(UnityEngine.Collider2D collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
         Debug.Log("Colided with: " + collision.gameObject);
     }
