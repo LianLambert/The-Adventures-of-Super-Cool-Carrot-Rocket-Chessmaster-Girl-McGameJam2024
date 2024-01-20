@@ -950,6 +950,7 @@ MonoBehaviour:
   waveRate: 9
   powerupRate: 2
   weaponRate: 2
+  waveCounter: 0
   wrenchWave: {fileID: 0}
 --- !u!4 &467110896
 Transform:
@@ -2096,6 +2097,7 @@ GameObject:
   - component: {fileID: 2820915778350257730}
   - component: {fileID: 6959408735943796070}
   - component: {fileID: 4354346342086072938}
+  - component: {fileID: 6959408735943796071}
   m_Layer: 8
   m_Name: queen
   m_TagString: queenPowerUp
@@ -2129,6 +2131,7 @@ GameObject:
   - component: {fileID: 4881020778912681378}
   - component: {fileID: 6725482649222232934}
   - component: {fileID: 4881647212831413081}
+  - component: {fileID: 6725482649222232935}
   m_Layer: 8
   m_Name: rook
   m_TagString: rookPowerUp
@@ -2293,6 +2296,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &6725482649222232935
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4308584143897533265}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c61ba389945754801b550f610d1e0fac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &6959408735943796070
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2345,6 +2360,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &6959408735943796071
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3057256017498089666}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c61ba389945754801b550f610d1e0fac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &9079860387887413381
 GameObject:
   m_ObjectHideFlags: 0
@@ -2356,6 +2383,7 @@ GameObject:
   - component: {fileID: 3185640075905036053}
   - component: {fileID: 2974042682157004842}
   - component: {fileID: 2617521770067146838}
+  - component: {fileID: 9079860387887413382}
   m_Layer: 8
   m_Name: bishop
   m_TagString: bishopPowerUp
@@ -2363,3 +2391,15 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 0
+--- !u!114 &9079860387887413382
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9079860387887413381}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c61ba389945754801b550f610d1e0fac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
