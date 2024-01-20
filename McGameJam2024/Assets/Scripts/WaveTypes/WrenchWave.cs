@@ -31,6 +31,7 @@ public class WrenchWave : MonoBehaviour
             float yPos = UnityEngine.Random.Range(0f,7f) - 3.15f;
 
             GameObject.Instantiate(wrench, new Vector3(xPos, yPos, 0f),Quaternion.identity);
+            Waiting();
 
         }
     }
