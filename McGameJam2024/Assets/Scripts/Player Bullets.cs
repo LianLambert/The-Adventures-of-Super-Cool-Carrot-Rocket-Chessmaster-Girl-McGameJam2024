@@ -50,6 +50,22 @@ public class PlayerBullets : MonoBehaviour
 
     void Shoot()
     {
+        bulletCooldownTimer = bulletCooldownTime;
+
+        if (basicShots)
+        {
+            Instantiate(bullet, transform.position, Quaternion.identity);
+        }
+        if (rookShots)
+        {
+
+        }
+        if (bishopShots)
+        {
+
+        }
+
+        
 
     }
 }
