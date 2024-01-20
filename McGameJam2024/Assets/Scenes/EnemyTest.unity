@@ -123,7 +123,7 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &31369632
+--- !u!1 &410742719
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -131,9 +131,10 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 31369635}
-  - component: {fileID: 31369634}
-  - component: {fileID: 31369633}
+  - component: {fileID: 410742723}
+  - component: {fileID: 410742722}
+  - component: {fileID: 410742721}
+  - component: {fileID: 410742720}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -141,26 +142,39 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &31369633
+--- !u!114 &410742720
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 31369632}
+  m_GameObject: {fileID: 410742719}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 435de535c522b434597c9f3a0622c1e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gear: {fileID: 3703071966299524341, guid: 4c9f7325ea4edca4a8196d4fcf1d17b8, type: 3}
+--- !u!114 &410742721
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 410742719}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f6b138c66aaef3f42b6d797ad2eaea9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   wrench: {fileID: 5197093029153576782, guid: adafd97153f9d2f41a45bc40f2281779, type: 3}
---- !u!114 &31369634
+--- !u!114 &410742722
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 31369632}
+  m_GameObject: {fileID: 410742719}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8b118e8fc1d84e6458aa14162c0a4ffb, type: 3}
@@ -172,21 +186,26 @@ MonoBehaviour:
   waveRate: 9
   powerupRate: 2
   weaponRate: 2
+  waveCounter: 0
+  bishopPowerup: {fileID: 967752983836490606, guid: 4e5ff25ffaf464491b44b3802e314764, type: 3}
+  rookPowerup: {fileID: 8174712753057265857, guid: d7592085a6ee54deda39992e19408514, type: 3}
+  queenPowerup: {fileID: 7406845137406750012, guid: 8b4a5623c56f841f7aacd7ce8170bb05, type: 3}
   wrenchWave: {fileID: 0}
---- !u!4 &31369635
+  gearWave: {fileID: 0}
+--- !u!4 &410742723
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 31369632}
+  m_GameObject: {fileID: 410742719}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.37774652, y: -0.4305706, z: -10.0072565}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &716580147
 GameObject:
@@ -363,7 +382,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &1344802879
 BoxCollider2D:

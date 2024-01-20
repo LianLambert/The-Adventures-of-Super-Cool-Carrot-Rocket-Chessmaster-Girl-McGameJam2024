@@ -1,13 +1,11 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using static UnityEditor.PlayerSettings;
 
-public class WrenchWave : MonoBehaviour
+public class GearWave : MonoBehaviour
 {
     GameManager gameManager;
-    [SerializeField] GameObject wrench;
+    [SerializeField] GameObject gear;
     // Start is called before the first frame update
     void Awake()
     {
@@ -16,22 +14,22 @@ public class WrenchWave : MonoBehaviour
 
     public void Wave()
     {
-        Debug.Log("Wrench Wave!");
+        Debug.Log("Gear Wave!");
         StartCoroutine(SpawnRoutine());
     }
 
     // Cooldown between wrenches during waves
     IEnumerator SpawnRoutine()
     {
-        int wrenchNum = 2 + gameManager.difficulty;
+        int gearNum = 1 + gameManager.difficulty / 2;
 
-        for (int i = 0; i < wrenchNum; i++)
+        for (int i = 0; i < gearNum; i++)
         {
             // Random Y position on game space
             float xPos = 10f;
-            float yPos = UnityEngine.Random.Range(0f, 7f) - 3.15f;
+            float yPos = 0f;
 
-            GameObject.Instantiate(wrench, new Vector3(xPos, yPos, 0f), Quaternion.identity);
+            GameObject.Instantiate(gear, new Vector3(xPos, yPos, 0f), Quaternion.identity);
             yield return new WaitForSeconds(0.75f);
         }
     }

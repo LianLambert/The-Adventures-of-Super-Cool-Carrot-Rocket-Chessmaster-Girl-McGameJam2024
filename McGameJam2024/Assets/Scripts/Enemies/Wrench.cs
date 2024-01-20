@@ -25,12 +25,6 @@ public class Wrench : MonoBehaviour
         rb.velocity = new Vector2(-2f, 0f);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     // Behaviour when the enemy is hit
     public void OnHit()
     {
