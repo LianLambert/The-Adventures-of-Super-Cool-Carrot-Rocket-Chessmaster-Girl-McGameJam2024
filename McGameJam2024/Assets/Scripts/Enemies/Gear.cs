@@ -89,11 +89,14 @@ public class Gear : MonoBehaviour
     }
 
     // Behaviour when the enemy is hit
-    public void OnHit()
+    IEnumerator OnHit()
     {
-        if (health >= 0)
+        if (health > 0)
         {
             health--;
+            this.gameObject.GetComponent<SpriteRenderer>().enabled = false;
+            yield return new WaitForSeconds(0.1f);
+            this.gameObject.GetComponent<SpriteRenderer>().enabled = true;
         }
         else
         {
@@ -119,7 +122,7 @@ public class Gear : MonoBehaviour
     {
         if (collision.GetComponent<Collider2D>().gameObject.CompareTag("PlayerBullet"))
         {
-            OnHit();
+            StartCoroutine(OnHit());
         }
     }
 

@@ -868,6 +868,10 @@ GameObject:
   - component: {fileID: 467110895}
   - component: {fileID: 467110894}
   - component: {fileID: 467110897}
+<<<<<<< Updated upstream
+=======
+  - component: {fileID: 467110898}
+>>>>>>> Stashed changes
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -910,8 +914,14 @@ MonoBehaviour:
   bishopPowerup: {fileID: 967752983836490606, guid: 4e5ff25ffaf464491b44b3802e314764, type: 3}
   rookPowerup: {fileID: 8174712753057265857, guid: d7592085a6ee54deda39992e19408514, type: 3}
   queenPowerup: {fileID: 7406845137406750012, guid: 8b4a5623c56f841f7aacd7ce8170bb05, type: 3}
+<<<<<<< Updated upstream
   wrenchWave: {fileID: 467110894}
   gearWave: {fileID: 467110897}
+=======
+  wrenchWave: {fileID: 0}
+  gearWave: {fileID: 0}
+  wrenchgear: {fileID: 0}
+>>>>>>> Stashed changes
 --- !u!4 &467110896
 Transform:
   m_ObjectHideFlags: 0
@@ -940,6 +950,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gear: {fileID: 3703071966299524341, guid: 4c9f7325ea4edca4a8196d4fcf1d17b8, type: 3}
+<<<<<<< Updated upstream
+=======
+--- !u!114 &467110898
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 467110893}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 933eac22e5031b64387f9121cf31c092, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gear: {fileID: 3703071966299524341, guid: 4c9f7325ea4edca4a8196d4fcf1d17b8, type: 3}
+  wrench: {fileID: 5197093029153576782, guid: adafd97153f9d2f41a45bc40f2281779, type: 3}
+>>>>>>> Stashed changes
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
