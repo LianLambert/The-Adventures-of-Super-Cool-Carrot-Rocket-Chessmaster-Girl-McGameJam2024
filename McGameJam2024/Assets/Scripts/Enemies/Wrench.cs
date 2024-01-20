@@ -34,7 +34,7 @@ public class Wrench : MonoBehaviour
     // Behaviour when the enemy is hit
     public void OnHit()
     {
-        if (health >= 0)
+        if (health > 0)
         {
             health--;
         }
@@ -48,19 +48,24 @@ public class Wrench : MonoBehaviour
     private void OnDestroyed()
     {
         gameManager.EnemyDown(this.gameObject);
-        GameObject.Destroy(this);
+        GameObject.Destroy(this.gameObject);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.collider.gameObject.CompareTag("EnemyWall")) {
+        if (collision.collider.gameObject.CompareTag("EnemyWall"))
+        {
             GameObject.Destroy(this.gameObject);
         }
-        else if(collision.collider.gameObject.CompareTag("PlayerBullet"))
+
+
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.GetComponent<Collider>().gameObject.CompareTag("PlayerBullet"))
         {
             OnHit();
         }
-        
-        
     }
 }
