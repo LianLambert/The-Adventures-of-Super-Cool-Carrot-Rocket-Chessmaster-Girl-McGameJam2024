@@ -9,6 +9,9 @@ public class playerBulletSpawner : MonoBehaviour
     private float bulletCooldownTimer = 0.0f;
     private bool shooting = false;
 
+    [SerializeField] private GameObject bishopHat;
+    [SerializeField] private GameObject rookHat;
+    [SerializeField] private GameObject queenHat;
     [SerializeField] public bool basicShots = true;
     [SerializeField] public bool rookShots = false;
     [SerializeField] public bool bishopShots = false;
@@ -34,6 +37,7 @@ public class playerBulletSpawner : MonoBehaviour
 
     void CheckShooting()
     {
+        // check if the player is holding the shooting key
         if (Input.GetKeyDown(KeyCode.Space))
         {
             shooting = true;
@@ -41,6 +45,32 @@ public class playerBulletSpawner : MonoBehaviour
         else if (Input.GetKeyUp(KeyCode.Space))
         {
             shooting = false;
+        }
+
+        // check which shooting pattern to apply (basic, rook, bishop, queen)
+        if (queenHat.activeSelf)
+        {
+            basicShots = false;
+            rookShots = true;
+            bishopShots = true;
+        }
+        else if (rookHat.activeSelf)
+        {
+            basicShots = false;
+            rookShots = true;
+            bishopShots = false;
+        }
+        else if (bishopHat.activeSelf)
+        {
+            basicShots = false;
+            rookShots = false;
+            bishopShots = true;
+        }
+        else
+        {
+            basicShots = true;
+            rookShots = false;
+            bishopShots = false;
         }
     }
 

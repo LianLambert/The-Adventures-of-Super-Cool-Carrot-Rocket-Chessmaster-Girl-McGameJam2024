@@ -5,11 +5,11 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     [SerializeField] private float moveSpeed = 5.0f;
+    [SerializeField] private float scrollSpeed = 2.5f;
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private GameObject bishopHat;
     [SerializeField] private GameObject rookHat;
     [SerializeField] private GameObject queenHat;
-
 
     // Start is called before the first frame update
     void Start()
@@ -26,6 +26,8 @@ public class Player : MonoBehaviour
 
     void UpdateMovement() {
         Vector3 pos = transform.position;
+        pos.x -= scrollSpeed * Time.deltaTime;
+
 
         if (Input.GetKey("w"))
         {

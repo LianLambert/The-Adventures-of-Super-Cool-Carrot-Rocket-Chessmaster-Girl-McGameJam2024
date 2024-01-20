@@ -235,7 +235,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
-  rb: {fileID: 0}
+  scrollSpeed: 1
+  rb: {fileID: 58004877}
+  bishopHat: {fileID: 9079860387887413381}
+  rookHat: {fileID: 4308584143897533265}
+  queenHat: {fileID: 3057256017498089666}
 --- !u!50 &58004877
 Rigidbody2D:
   serializedVersion: 4
@@ -327,6 +331,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerBullet: {fileID: 8337338384906358947, guid: 48b84b8367a8a41f38e79b6c5b6bdaa6, type: 3}
   bulletCooldownTime: 0.25
+  bishopHat: {fileID: 9079860387887413381}
+  rookHat: {fileID: 4308584143897533265}
+  queenHat: {fileID: 3057256017498089666}
   basicShots: 1
   rookShots: 0
   bishopShots: 0
