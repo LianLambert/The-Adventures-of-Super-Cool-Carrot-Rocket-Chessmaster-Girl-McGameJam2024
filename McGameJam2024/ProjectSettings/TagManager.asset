@@ -15,6 +15,7 @@ TagManager:
   - StickyItem
   - Gear
   - Wall
+  - Big Gear
   layers:
   - Default
   - TransparentFX
@@ -32,7 +33,7 @@ TagManager:
   - PickUps
   - Gear
   - Enemy Bullets
-  - 
+  - Big Gear
   - 
   - 
   - 
@@ -60,6 +61,9 @@ TagManager:
     locked: 0
   - name: Enemy Bullets
     uniqueID: 2259527015
+    locked: 0
+  - name: Big Gear
+    uniqueID: 963549299
     locked: 0
   - name: Wrench
     uniqueID: 3738906269
