@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,30 +8,48 @@ public class Gear : MonoBehaviour
     // We want access to the GameManager functions from this class.
     [SerializeField] GameManager gameManager;
 
-    // Enemy body
-    [SerializeField] Rigidbody2D rb;
-    [SerializeField] Animator animator;
-
     // Enemy fields
-    private int health = 3;
+    private int health = 2;
+    private float time = 0f;
+    private float shootingTime = 0f;
 
     void Awake()
     {
         gameManager = GameObject.FindAnyObjectByType<GameManager>();
-        animator = this.GetComponent<Animator>();
     }
 
     // Start is called before the first frame update
     void Start()
     {
-        health = 3 + gameManager.difficulty;
-        rb.velocity = new Vector2(-2f, 0f);
+        health = 2 + gameManager.difficulty;
     }
 
     // Update is called once per frame
     void Update()
     {
+        time += Time.deltaTime;
+        shootingTime += Time.deltaTime;
 
+        // Sin movement
+        float x = 2 * time;
+        float y = (float) (2*(Math.Sin(x)));
+        transform.position =  new Vector3(10f,0f,0f) - new Vector3(x, y, 0f);
+
+        // Shooting
+        if(shootingTime >= 2f)
+        {
+            StartCoroutine(Shoot());
+            shootingTime = 0f;
+        }
+
+
+    }
+
+    IEnumerator Shoot()
+    {
+        this.GetComponent<Animator>().SetTrigger("shoot");
+        yield return new WaitForSeconds(2f);
+        this.GetComponent<Animator>().ResetTrigger("shoot");
     }
 
     // Behaviour when the enemy is hit

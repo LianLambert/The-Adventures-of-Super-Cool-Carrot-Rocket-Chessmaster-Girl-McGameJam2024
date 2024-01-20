@@ -28,7 +28,7 @@ TagManager:
   - Player Bullets
   - Hats
   - PickUps
-  - 
+  - Gear
   - 
   - 
   - 
@@ -61,6 +61,9 @@ TagManager:
     locked: 0
   - name: Wrench
     uniqueID: 3738906269
+    locked: 0
+  - name: Gear
+    uniqueID: 632770357
     locked: 0
   - name: Player
     uniqueID: 2784353411
