@@ -6,9 +6,9 @@ using UnityEngine.SceneManagement;
 
 public class playerManager : MonoBehaviour
 {
-    [SerializeField] public GameObject bishopHat;
-    [SerializeField] public GameObject rookHat;
-    [SerializeField] public GameObject queenHat;
+    [SerializeField] public GameObject bishopHat1;
+    [SerializeField] public GameObject rookHat1;
+    [SerializeField] public GameObject queenHat1;
     [SerializeField] private TextMeshProUGUI scoreText;
     [SerializeField] private TextMeshProUGUI waveText;
     [SerializeField] private TextMeshProUGUI gameOverText;

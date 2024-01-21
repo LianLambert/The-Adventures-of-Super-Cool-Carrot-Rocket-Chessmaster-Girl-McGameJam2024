@@ -4,33 +4,43 @@ using UnityEngine;
 
 public class Player2 : MonoBehaviour
 {
-    [SerializeField] private GameObject life1;
-    [SerializeField] private GameObject life2;
-    [SerializeField] private GameObject life3;
-    [SerializeField] private GameObject life4;
-    [SerializeField] private float moveSpeed = 5.0f;
-    [SerializeField] private float scrollSpeed = 2.5f;
-    [SerializeField] private float xMin = -5.28f;
-    [SerializeField] private float xMax = 5.04f;
-    [SerializeField] private float yMin = -3.85f;
-    [SerializeField] private float yMax = 3.55f;
-    private GameObject playerManager;
-    private GameObject bishopHat;
-    private GameObject rookHat;
-    private GameObject queenHat;
+    [SerializeField] private GameObject player1;
+    private Player1 p1Script;
+
+    private float moveSpeed;
+    private float scrollSpeed;
+    private float xMin;
+    private float xMax;
+    private float yMin;
+    private float yMax;
+    private float damageCooldownTime;
+    private GameObject bishopHat1;
+    private GameObject rookHat1;
+    private GameObject queenHat1;
+    [SerializeField] private GameObject bishopHat2;
+    [SerializeField] private GameObject rookHat2;
+    [SerializeField] private GameObject queenHat2;
     private Rigidbody2D rb;
-    [SerializeField] private int playerHealth = 4;
-    [SerializeField] private float damageCooldownTime = 0.05f;
     private float damageCooldownTimer = 0.0f;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        playerManager = GameObject.Find("playerManager");
-        bishopHat = playerManager.GetComponent<playerManager>().bishopHat;
-        rookHat = playerManager.GetComponent<playerManager>().rookHat;
-        queenHat = playerManager.GetComponent<playerManager>().queenHat;
+        player1 = GameObject.Find("player1");
+        p1Script = player1.GetComponent<Player1>();
+
+        moveSpeed = p1Script.moveSpeed;
+        scrollSpeed = p1Script.scrollSpeed;
+        xMin = p1Script.xMin;
+        xMax = p1Script.xMax;
+        yMin = p1Script.yMin;
+        yMax = p1Script.yMax;
+        bishopHat1 = p1Script.bishopHat1;
+        rookHat1 = p1Script.rookHat1;
+        queenHat1 = p1Script.queenHat1;
+        damageCooldownTime = p1Script.damageCooldownTime;
+
         rb = this.gameObject.GetComponent<Rigidbody2D>();
         rb.constraints = RigidbodyConstraints2D.FreezeRotation;
     }
@@ -159,33 +169,9 @@ public class Player2 : MonoBehaviour
     IEnumerator OnHit()
     {
         damageCooldownTimer = damageCooldownTime;
-        ReduceHealth();
+        p1Script.ReduceHealth();
         this.gameObject.GetComponent<SpriteRenderer>().enabled = false;
         yield return new WaitForSeconds(0.1f);
         this.gameObject.GetComponent<SpriteRenderer>().enabled = true;
-    }
-
-    // update health(battery)
-    private void ReduceHealth()
-    {
-        playerHealth -= 1;
-
-        if(playerHealth == 3)
-        {
-            life4.SetActive(false);
-        }
-        else if (playerHealth == 2)
-        {
-            life3.SetActive(false);
-        }
-        else if (playerHealth == 1)
-        {
-            life2.SetActive(false);
-        }
-        else if (playerHealth == 0)
-        {
-            life1.SetActive(false);
-            playerManager.GetComponent<playerManager>().GameOver();
-        }
     }
 }
