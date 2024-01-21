@@ -25,6 +25,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameObject bishopPowerup;
     [SerializeField] GameObject rookPowerup;
     [SerializeField] GameObject queenPowerup;
+    [SerializeField] GameObject pawnUp;
+    [SerializeField] GameObject pawnDown;
 
     // Wave Types
     [SerializeField] WrenchWave wrenchWave;
@@ -87,7 +89,19 @@ public class GameManager : MonoBehaviour
         // Weapons roll first
         if (randomIntWpn <= weaponRate)
         {
-            // Spawn weapon
+            int rng = UnityEngine.Random.Range(1, 101);
+
+            // Up pawn weapon
+            if(rng <= 51)
+            {
+                GameObject pUp = GameObject.Instantiate(pawnUp, enemyPos, enemyQuat);
+                Destroy(pUp, powerupTimer);
+            }
+            else
+            {
+                GameObject pDown = GameObject.Instantiate(pawnDown, enemyPos, enemyQuat);
+                Destroy(pDown, powerupTimer);
+            }
         }
 
         // Enemies can spawn powerups
