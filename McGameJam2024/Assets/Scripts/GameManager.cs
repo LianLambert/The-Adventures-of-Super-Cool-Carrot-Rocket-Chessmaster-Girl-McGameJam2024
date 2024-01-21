@@ -18,6 +18,9 @@ public class GameManager : MonoBehaviour
     public int waveCounter = 0;
     public float powerupTimer = 3f;
 
+    // Player Manager
+    [SerializeField] public playerManager playerManager;
+
     // Prefabs
     [SerializeField] GameObject bishopPowerup;
     [SerializeField] GameObject rookPowerup;
@@ -29,15 +32,6 @@ public class GameManager : MonoBehaviour
     [SerializeField] WrenchGearWave wrenchgear;
     [SerializeField] BigGearWave bigGear;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        // Getting waveTypes
-        wrenchWave = GetComponent<WrenchWave>();
-        gearWave = GetComponent<GearWave>();
-        wrenchgear = GetComponent<WrenchGearWave>();
-        bigGear = GetComponent<BigGearWave>();
-    }
 
     // Update is called once per frame
     void Update()
@@ -59,18 +53,22 @@ public class GameManager : MonoBehaviour
             {
                 case "wrench":
                     wrenchWave.Wave();
+                    playerManager.Wave(waveCounter);
                     break;
 
                 case "gear":
                     gearWave.Wave();
+                    playerManager.Wave(waveCounter);
                     break;
 
                 case "wrenchgear":
                     wrenchgear.Wave();
+                    playerManager.Wave(waveCounter);
                     break;
 
                 case "biggear":
                     bigGear.Wave();
+                    playerManager.Wave(waveCounter);
                     break;
 
             }
@@ -134,17 +132,13 @@ public class GameManager : MonoBehaviour
         string waveType;
         int rng = UnityEngine.Random.Range(0, 100);
 
-        // Mixed waves
-        if (rng <= 2 * difficulty)
-        {
-            waveType = "all";
-        }
-
-        else if (rng <= 3 * difficulty + 15)
+        // Mixed wave
+        if (rng <= 3 * difficulty + 15)
         {
             waveType = "wrenchgear";
         }
 
+        // Solo waves
         else if(rng <= 3 * difficulty + 20)
         {
             waveType = "biggear";

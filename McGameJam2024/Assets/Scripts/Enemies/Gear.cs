@@ -104,6 +104,7 @@ public class Gear : MonoBehaviour
     // Behaviour when the enemy is destroyed
     private void OnDestroyed()
     {
+        gameManager.playerManager.AddScore(100);
         gameManager.EnemyDown(this.gameObject);
         GameObject.Destroy(this.gameObject);
     }
@@ -148,5 +149,7 @@ public class Gear : MonoBehaviour
 
         GameObject bulletW = Instantiate(saw, transform.position, Quaternion.Euler(0, 0, 180));
         bulletW.GetComponent<EnemyBullet>().direction = new Vector3(-1, 0, 0).normalized;
+
+        gameManager.playerManager.AddScore(40);
     }
 }

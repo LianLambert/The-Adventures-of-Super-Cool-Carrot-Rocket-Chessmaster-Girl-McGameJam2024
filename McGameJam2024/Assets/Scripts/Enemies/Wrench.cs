@@ -44,6 +44,7 @@ public class Wrench : MonoBehaviour
     // Behaviour when the enemy is destroyed
     private void OnDestroyed()
     {
+        gameManager.playerManager.AddScore(50);
         gameManager.EnemyDown(this.gameObject);
         GameObject.Destroy(this.gameObject);
     }

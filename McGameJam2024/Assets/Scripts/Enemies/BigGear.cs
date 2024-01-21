@@ -60,6 +60,7 @@ public class BigGear : MonoBehaviour
             GameObject bulletW = Instantiate(saw, transform.position, Quaternion.Euler(0, 0, 180));
             bulletW.GetComponent<EnemyBullet>().direction = new Vector3(-1, 0, 0).normalized;
 
+            gameManager.playerManager.AddScore(75);
             yield return new WaitForSeconds(0.33f);
         }
         
@@ -83,6 +84,7 @@ public class BigGear : MonoBehaviour
     // Behaviour when the enemy is destroyed
     private void OnDestroyed()
     {
+        gameManager.playerManager.AddScore(200);
         gameManager.EnemyDown(this.gameObject);
         GameObject.Destroy(this.gameObject);
     }
