@@ -95,12 +95,10 @@ public class GameManager : MonoBehaviour
             if(rng <= 51)
             {
                 GameObject pUp = GameObject.Instantiate(pawnUp, enemyPos, enemyQuat);
-                Destroy(pUp, powerupTimer);
             }
             else
             {
                 GameObject pDown = GameObject.Instantiate(pawnDown, enemyPos, enemyQuat);
-                Destroy(pDown, powerupTimer);
             }
         }
 
