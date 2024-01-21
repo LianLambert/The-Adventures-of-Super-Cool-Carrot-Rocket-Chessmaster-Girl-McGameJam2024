@@ -62,7 +62,7 @@ public class TitleButtons : MonoBehaviour
 
             if(AndKenTitle.alpha == 1)
             {
-                if(PressStart.alpha < 1)
+                if(PressStart.alpha < 1)
                 {
                     PressStart.alpha += 0.01f;
                 }
