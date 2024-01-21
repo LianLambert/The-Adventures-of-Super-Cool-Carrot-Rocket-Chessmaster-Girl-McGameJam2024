@@ -115,7 +115,8 @@ public class Player1 : MonoBehaviour
         // enemy collisions (take damage)
         else if (other.gameObject.CompareTag("EnemyBullet") || other.gameObject.CompareTag("Wrench") || other.gameObject.CompareTag("Gear") || other.gameObject.CompareTag("Big Gear"))
         {
-            if(damageCooldownTimer <= 0)
+            Debug.Log("collided with: " + other.gameObject);
+            if (damageCooldownTimer <= 0)
             {
                 StartCoroutine(OnHit());
             }
@@ -147,6 +148,7 @@ public class Player1 : MonoBehaviour
         // enemy collisions (take damage)
         else if (other.gameObject.CompareTag("EnemyBullet") || other.gameObject.CompareTag("Wrench") || other.gameObject.CompareTag("Gear") || other.gameObject.CompareTag("BigGear"))
         {
+            Debug.Log("collided with: " + other.gameObject);
             if (damageCooldownTimer <= 0)
             {
                 StartCoroutine(OnHit());
