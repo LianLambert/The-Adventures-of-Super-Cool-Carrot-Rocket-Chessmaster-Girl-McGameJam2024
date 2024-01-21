@@ -89,16 +89,25 @@ public class BigGear : MonoBehaviour
         GameObject.Destroy(this.gameObject);
     }
 
+    // Keep BOTH OnTriggerEnter2D and OnCollisionEnter2D
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.collider.gameObject.CompareTag("EnemyWall"))
+        if (collision.gameObject.CompareTag("EnemyWall"))
         {
             GameObject.Destroy(this.gameObject);
+        }
+        else if (collision.gameObject.CompareTag("PlayerBullet"))
+        {
+            StartCoroutine(OnHit());
         }
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.GetComponent<Collider2D>().gameObject.CompareTag("PlayerBullet"))
+        if (collision.gameObject.CompareTag("EnemyWall"))
+        {
+            GameObject.Destroy(this.gameObject);
+        }
+        else if (collision.GetComponent<Collider2D>().gameObject.CompareTag("PlayerBullet"))
         {
             StartCoroutine(OnHit());
         }

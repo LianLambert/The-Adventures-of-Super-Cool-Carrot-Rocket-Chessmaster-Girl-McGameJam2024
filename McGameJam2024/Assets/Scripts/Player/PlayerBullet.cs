@@ -19,7 +19,13 @@ public class PlayerBullet : MonoBehaviour
         transform.position += direction * bulletSpeed * Time.deltaTime;
     }
 
+    // Keep BOTH OnTriggerEnter2D and OnCollisionEnter2D
     private void OnTriggerEnter2D(Collider2D collision)
+    {
+        Destroy(this.gameObject);
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
     {
         Destroy(this.gameObject);
     }

@@ -80,6 +80,7 @@ public class Player : MonoBehaviour
         transform.position = pos;
     }
 
+    // Keep BOTH OnTriggerEnter2D and OnCollisionEnter2D
     private void OnTriggerEnter2D(Collider2D other)
     {
         // hat collisions
@@ -169,19 +170,19 @@ public class Player : MonoBehaviour
     {
         playerHealth -= 1;
 
-        if(playerHealth == 4)
+        if(playerHealth == 3)
         {
             life4.SetActive(false);
         }
-        else if (playerHealth == 3)
+        else if (playerHealth == 2)
         {
             life3.SetActive(false);
         }
-        else if (playerHealth == 2)
+        else if (playerHealth == 1)
         {
             life2.SetActive(false);
         }
-        else if (playerHealth == 1)
+        else if (playerHealth == 0)
         {
             life1.SetActive(false);
             playerManager.GetComponent<playerManager>().GameOver();

@@ -6,8 +6,21 @@ using UnityEngine;
 public class StickyItem : MonoBehaviour
 {
     public bool stuckToPlayer = false;
+    private GameObject playerManager;
+    private GameObject bishopHat;
+    private GameObject rookHat;
+    private GameObject queenHat;
 
-    // NOTE: used both OnTriggerEnter2D and OnCollisionEnter2D just to make sure to cover all bases
+    // Start is called before the first frame update
+    void Start()
+    {
+        playerManager = GameObject.Find("playerManager");
+        bishopHat = playerManager.GetComponent<playerManager>().bishopHat;
+        rookHat = playerManager.GetComponent<playerManager>().rookHat;
+        queenHat = playerManager.GetComponent<playerManager>().queenHat;
+    }
+
+    // Keep BOTH OnTriggerEnter2D and OnCollisionEnter2D
 
     // assuming StickyItems are NOT triggers but that enemies and enemy bullets are
     private void OnTriggerEnter2D(Collider2D collision)
@@ -15,6 +28,30 @@ public class StickyItem : MonoBehaviour
         // if already attached to player
         if (stuckToPlayer)
         {
+            // hat collisions
+            if (collision.gameObject.CompareTag("bishopPowerUp"))
+            {
+
+                bishopHat.SetActive(true);
+                rookHat.SetActive(false);
+                queenHat.SetActive(false);
+                Destroy(collision.gameObject);
+
+            }
+            else if (collision.gameObject.CompareTag("rookPowerUp"))
+            {
+                Destroy(collision.gameObject);
+                bishopHat.SetActive(false);
+                rookHat.SetActive(true);
+                queenHat.SetActive(false);
+            }
+            else if (collision.gameObject.CompareTag("queenPowerUp"))
+            {
+                Destroy(collision.gameObject);
+                bishopHat.SetActive(false);
+                rookHat.SetActive(false);
+                queenHat.SetActive(true);
+            }
             // if hit by an enemy or enemy bullet, destroy it along with its chilren
             if (collision.gameObject.CompareTag("EnemyBullet") || collision.gameObject.CompareTag("Wrench") || collision.gameObject.CompareTag("Gear") || collision.gameObject.CompareTag("BigGear"))
             {
@@ -43,7 +80,7 @@ public class StickyItem : MonoBehaviour
                 stuckToPlayer = true;
             }
         }
-        
+
     }
 
     // assuming StickyItems are NOT triggers but that enemies and enemy bullets are
@@ -52,6 +89,30 @@ public class StickyItem : MonoBehaviour
         // if already attached to player
         if (stuckToPlayer)
         {
+            // hat collisions
+            if (collision.gameObject.CompareTag("bishopPowerUp"))
+            {
+
+                bishopHat.SetActive(true);
+                rookHat.SetActive(false);
+                queenHat.SetActive(false);
+                Destroy(collision.gameObject);
+
+            }
+            else if (collision.gameObject.CompareTag("rookPowerUp"))
+            {
+                Destroy(collision.gameObject);
+                bishopHat.SetActive(false);
+                rookHat.SetActive(true);
+                queenHat.SetActive(false);
+            }
+            else if (collision.gameObject.CompareTag("queenPowerUp"))
+            {
+                Destroy(collision.gameObject);
+                bishopHat.SetActive(false);
+                rookHat.SetActive(false);
+                queenHat.SetActive(true);
+            }
             // if hit by an enemy or enemy bullet, destroy it along with its chilren
             if (collision.gameObject.CompareTag("EnemyBullet") || collision.gameObject.CompareTag("Wrench") || collision.gameObject.CompareTag("Gear") || collision.gameObject.CompareTag("BigGear"))
             {
@@ -80,7 +141,5 @@ public class StickyItem : MonoBehaviour
                 stuckToPlayer = true;
             }
         }
-
     }
-
 }

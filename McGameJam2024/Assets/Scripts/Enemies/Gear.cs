@@ -109,15 +109,24 @@ public class Gear : MonoBehaviour
         GameObject.Destroy(this.gameObject);
     }
 
+    // Keep BOTH OnTriggerEnter2D and OnCollisionEnter2D
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.collider.gameObject.CompareTag("EnemyWall"))
         {
             GameObject.Destroy(this.gameObject);
         }
+        if (collision.gameObject.CompareTag("PlayerBullet"))
+        {
+            StartCoroutine(OnHit());
+        }
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        if (collision.gameObject.CompareTag("EnemyWall"))
+        {
+            GameObject.Destroy(this.gameObject);
+        }
         if (collision.GetComponent<Collider2D>().gameObject.CompareTag("PlayerBullet"))
         {
             StartCoroutine(OnHit());

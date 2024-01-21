@@ -12,6 +12,8 @@ public class EnemyBullet : MonoBehaviour
     {
         transform.position += direction * bulletSpeed * Time.deltaTime;
     }
+
+    // Keep BOTH OnTriggerEnter2D and OnCollisionEnter2D
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.collider.gameObject.CompareTag("PlayerBullet") ||
@@ -23,11 +25,13 @@ public class EnemyBullet : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.GetComponent<Collider2D>().gameObject.CompareTag("PlayerBullet"))
+        if (collision.gameObject.CompareTag("PlayerBullet") ||
+               collision.gameObject.CompareTag("Player"))
         {
             GameObject.Destroy(this.gameObject);
         }
     }
+
 
     private void OnBecameInvisible()
     {

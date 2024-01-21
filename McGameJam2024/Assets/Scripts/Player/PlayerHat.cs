@@ -10,9 +10,18 @@ public class PlayerHat : MonoBehaviour
         hat and player bullets
         also top bar has no collider
     */
-    private void OnTriggerEnter2D(Collider2D collision)
+
+    // Keep BOTH OnTriggerEnter2D and OnCollisionEnter2D
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        if (!collision.gameObject.CompareTag("StickyItem"))
+        if (other.gameObject.CompareTag("EnemyBullet") || other.gameObject.CompareTag("Wrench") || other.gameObject.CompareTag("Gear") || other.gameObject.CompareTag("BigGear"))
+        {
+            this.gameObject.SetActive(false);
+        }
+    }
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.gameObject.CompareTag("EnemyBullet") || other.gameObject.CompareTag("Wrench") || other.gameObject.CompareTag("Gear") || other.gameObject.CompareTag("BigGear"))
         {
             this.gameObject.SetActive(false);
         }
