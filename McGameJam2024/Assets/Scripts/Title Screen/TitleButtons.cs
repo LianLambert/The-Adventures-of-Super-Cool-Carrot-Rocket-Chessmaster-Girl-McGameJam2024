@@ -19,7 +19,11 @@ public class TitleButtons : MonoBehaviour
     [SerializeField] private GameObject multiplayerButton;
     private bool anim_finished = false;
     private bool allcond = false;
-    private bool singleplayer = true; 
+    private bool singleplayer = true;
+
+    // Audio
+    [SerializeField] AudioClip kenSound;
+    [SerializeField] AudioClip textSound;
 
     // Start is called before the first frame update
     void Start()
@@ -80,6 +84,7 @@ public class TitleButtons : MonoBehaviour
                 MainTitle.alpha = 1f;
                 AndKenTitle.alpha = 1f;
                 PressStart.alpha = 1f;
+
 
             }
 
