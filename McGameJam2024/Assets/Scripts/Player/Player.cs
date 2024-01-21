@@ -91,4 +91,18 @@ public class Player : MonoBehaviour
             queenHat.SetActive(true);
         }
     }
+
+    // Behaviour when the enemy is hit
+    IEnumerator OnHit()
+    {
+        ReduceHealth();
+        this.gameObject.GetComponent<SpriteRenderer>().enabled = false;
+        yield return new WaitForSeconds(0.1f);
+        this.gameObject.GetComponent<SpriteRenderer>().enabled = true;
+    }
+
+    private void ReduceHealth()
+    {
+
+    }
 }
