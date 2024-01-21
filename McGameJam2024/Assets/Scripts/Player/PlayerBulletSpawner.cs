@@ -11,12 +11,11 @@ public class PlayerBulletSpawner : MonoBehaviour
     [SerializeField] public bool attachedToPlayer = false;
 
     [SerializeField] private float bulletTime = 10.0f;
-    [SerializeField] private float bulletCooldownTime = 0.05f;
+    [SerializeField] private float bulletCooldownTime = 0.25f;
     private float bulletCooldownTimer = 0.0f;
     private bool playerShooting = false;
 
     
-
     // Start is called before the first frame update
     void Start()
     {

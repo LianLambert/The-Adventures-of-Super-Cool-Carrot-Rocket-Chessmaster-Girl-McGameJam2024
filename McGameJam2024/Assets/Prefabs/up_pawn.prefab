@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5925500266693246482}
   - component: {fileID: 6495132094558929504}
   - component: {fileID: 2563730029468136330}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: up_pawn
   m_TagString: StickyItem
   m_Icon: {fileID: 0}
@@ -34,7 +34,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1385745010373277061
 SpriteRenderer:
@@ -133,9 +133,9 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.012638152, y: 0.024379015}
+  m_Offset: {x: 0.012638152, y: 0.018633872}
   serializedVersion: 2
-  m_Radius: 0.35563302
+  m_Radius: 0.3042135
 --- !u!114 &6495132094558929504
 MonoBehaviour:
   m_ObjectHideFlags: 0

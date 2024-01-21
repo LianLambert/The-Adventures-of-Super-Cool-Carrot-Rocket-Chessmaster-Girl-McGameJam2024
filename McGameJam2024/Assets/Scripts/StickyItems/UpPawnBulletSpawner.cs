@@ -6,7 +6,7 @@ public class UpPawnBulletSpawner : MonoBehaviour
 {
     [SerializeField] private GameObject diagonalPlayerBullet;
     [SerializeField] private float bulletTime = 2.0f;
-    [SerializeField] private float bulletCooldownTime = 0.05f;
+    [SerializeField] private float bulletCooldownTime = 0.25f;
     private float bulletCooldownTimer = 0.0f;
     private bool shooting = false;
 
