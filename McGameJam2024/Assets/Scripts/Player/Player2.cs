@@ -120,7 +120,7 @@ public class Player2 : MonoBehaviour
             Destroy(other.gameObject);
         }
         // enemy collisions (take damage)
-        else if (other.gameObject.CompareTag("EnemyBullet") || other.gameObject.CompareTag("Wrench") || other.gameObject.CompareTag("Gear") || other.gameObject.CompareTag("BigGear"))
+        else if (other.gameObject.CompareTag("EnemyBullet") || other.gameObject.CompareTag("Wrench") || other.gameObject.CompareTag("Gear") || other.gameObject.CompareTag("Big Gear"))
         {
             if (damageCooldownTimer <= 0)
             {

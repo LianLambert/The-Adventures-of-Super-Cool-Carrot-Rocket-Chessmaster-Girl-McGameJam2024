@@ -94,7 +94,7 @@ public class StickyItem : MonoBehaviour
                 Destroy(collision.gameObject);
             }
             // if hit by an enemy or enemy bullet, destroy it along with its chilren
-            if (collision.gameObject.CompareTag("EnemyBullet") || collision.gameObject.CompareTag("Wrench") || collision.gameObject.CompareTag("Gear") || collision.gameObject.CompareTag("BigGear"))
+            if (collision.gameObject.CompareTag("EnemyBullet") || collision.gameObject.CompareTag("Wrench") || collision.gameObject.CompareTag("Gear") || collision.gameObject.CompareTag("Big Gear"))
             {
                 Destroy(this.gameObject);
             }
