@@ -11,6 +11,8 @@ public class playerManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI waveText;
     [SerializeField] private TextMeshProUGUI gameOverText;
     [SerializeField] private GameObject gameOverPanel;
+    [SerializeField] private GameObject mainCamera;
+    [SerializeField] private AudioClip gameOverAudio;
     private int score = 0;
     private int wave = 0;
     private bool gameOver = false;
@@ -38,6 +40,7 @@ public class playerManager : MonoBehaviour
         gameOver = true;
         gameOverText.text = "Game Over\n\nScore: " + score + "\nWave: " + wave + "\n\nPress Space to exit";
         gameOverPanel.SetActive(true);
+        mainCamera.GetComponent<AudioSource>().clip = gameOverAudio;
     }
     private void Update()
     {
