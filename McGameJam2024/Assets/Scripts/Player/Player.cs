@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    [SerializeField] private GameObject life1;
+    [SerializeField] private GameObject life2;
+    [SerializeField] private GameObject life3;
+    [SerializeField] private GameObject life4;
     [SerializeField] private float moveSpeed = 5.0f;
     [SerializeField] private float scrollSpeed = 2.5f;
     [SerializeField] private float xMin = -5.28f;
@@ -15,7 +19,10 @@ public class Player : MonoBehaviour
     private GameObject rookHat;
     private GameObject queenHat;
     private Rigidbody2D rb;
-    
+    private int playerHealth = 4;
+    [SerializeField] private float damageCooldownTime = 0.05f;
+    private float damageCooldownTimer = 0.0f;
+
 
     // Start is called before the first frame update
     void Start()
@@ -31,7 +38,16 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        UpdateTimers();
         UpdateMovement();
+    }
+
+    void UpdateTimers()
+    {
+        if (damageCooldownTimer > 0)
+        {
+            damageCooldownTimer -= Time.deltaTime;
+        }
     }
 
 
@@ -90,9 +106,18 @@ public class Player : MonoBehaviour
             rookHat.SetActive(false);
             queenHat.SetActive(true);
         }
+        // enemy collisions (take damage)
+        else if (other.gameObject.CompareTag("EnemyBullet") || other.gameObject.CompareTag("Wrench") || other.gameObject.CompareTag("Gear") || other.gameObject.CompareTag("BigGear"))
+        {
+            if(damageCooldownTimer <= 0)
+            {
+                StartCoroutine(OnHit());
+            }
+                
+        }
     }
 
-    // Behaviour when the enemy is hit
+    // blink when hit
     IEnumerator OnHit()
     {
         ReduceHealth();
@@ -101,8 +126,27 @@ public class Player : MonoBehaviour
         this.gameObject.GetComponent<SpriteRenderer>().enabled = true;
     }
 
+    // update health(battery)
     private void ReduceHealth()
     {
+        playerHealth -= 1;
 
+        if(playerHealth == 3)
+        {
+            life1.SetActive(false);
+        }
+        else if (playerHealth == 2)
+        {
+            life2.SetActive(false);
+        }
+        else if (playerHealth == 1)
+        {
+            life3.SetActive(false);
+        }
+        else if (playerHealth == 0)
+        {
+            life4.SetActive(false);
+            playerManager.GetComponent<playerManager>().GameOver();
+        }
     }
 }

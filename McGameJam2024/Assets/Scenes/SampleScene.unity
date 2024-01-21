@@ -234,6 +234,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6ad56b122c4149afaa24e98a499a1ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  life1: {fileID: 0}
+  life2: {fileID: 0}
+  life3: {fileID: 0}
+  life4: {fileID: 0}
   moveSpeed: 5
   scrollSpeed: 1
   xMin: -5.28
@@ -906,7 +910,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timer: 0
-  difficulty: 0
+  difficulty: 1
   waveTimer: 8
   waveRate: 9
   powerupRate: 2
@@ -919,7 +923,7 @@ MonoBehaviour:
   wrenchWave: {fileID: 467110894}
   gearWave: {fileID: 467110897}
   wrenchgear: {fileID: 467110898}
-  bigGear: {fileID: 0}
+  bigGear: {fileID: 467110899}
 --- !u!4 &467110896
 Transform:
   m_ObjectHideFlags: 0
@@ -1564,6 +1568,10 @@ PrefabInstance:
     - target: {fileID: 6863624053850271352, guid: f00639fb9f5d380498571dbf2e2ae0b2, type: 3}
       propertyPath: m_Layer
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6863624053850271352, guid: f00639fb9f5d380498571dbf2e2ae0b2, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6894961882192675994, guid: f00639fb9f5d380498571dbf2e2ae0b2, type: 3}
       propertyPath: m_RootOrder

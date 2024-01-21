@@ -24,4 +24,8 @@ public class playerManager : MonoBehaviour
         waveText.text = "Wave: " + amount;
 
     }
+    public void GameOver()
+    {
+
+    }
 }
