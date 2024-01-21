@@ -33,6 +33,7 @@ public class Player2 : MonoBehaviour
     {
         // player1 reference
         p1Script = player1.GetComponent<Player1>();
+        p1Script.lastLife.AddListener(() => StartCoroutine(BlinkRed()));
 
         // playerManager script reference
         playerManager = p1Script.playerManager;
@@ -200,13 +201,28 @@ public class Player2 : MonoBehaviour
     void CheckShooting()
     {
         // check if the player is holding the shooting key
-        if (Input.GetKeyDown(KeyCode.RightShift))
+        if (Input.GetKeyDown(KeyCode.Period))
         {
             shooting = true;
         }
-        else if (Input.GetKeyUp(KeyCode.RightShift))
+        else if (Input.GetKeyUp(KeyCode.Period))
         {
             shooting = false;
         }
+    }
+
+    IEnumerator BlinkRed()
+    {
+        // Store the original color
+        Color originalColor = this.gameObject.GetComponent<SpriteRenderer>().color;
+
+        // Set the sprite to red
+        this.gameObject.GetComponent<SpriteRenderer>().color = new Color(1f, 162f / 255f, 162f / 255f); // FFA2A2
+
+        // Wait for one second
+        yield return new WaitForSeconds(0.1f);
+
+        // Restore the original color
+        this.gameObject.GetComponent<SpriteRenderer>().color = originalColor;
     }
 }
