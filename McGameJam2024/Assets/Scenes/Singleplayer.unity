@@ -352,43 +352,19 @@ PrefabInstance:
       addedObject: {fileID: 58004877}
     - targetCorrespondingSourceObject: {fileID: 5766680046722677861, guid: 57a50f0bc088d9041a9cfcca6baf0381, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 58004876}
-    - targetCorrespondingSourceObject: {fileID: 5766680046722677861, guid: 57a50f0bc088d9041a9cfcca6baf0381, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 58004880}
     - targetCorrespondingSourceObject: {fileID: 5766680046722677861, guid: 57a50f0bc088d9041a9cfcca6baf0381, type: 3}
       insertIndex: -1
       addedObject: {fileID: 58004884}
+    - targetCorrespondingSourceObject: {fileID: 5766680046722677861, guid: 57a50f0bc088d9041a9cfcca6baf0381, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 58004885}
   m_SourcePrefab: {fileID: 100100000, guid: 57a50f0bc088d9041a9cfcca6baf0381, type: 3}
 --- !u!1 &58004874 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5766680046722677861, guid: 57a50f0bc088d9041a9cfcca6baf0381, type: 3}
   m_PrefabInstance: {fileID: 58004873}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &58004876
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 58004874}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d6ad56b122c4149afaa24e98a499a1ce, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  life1: {fileID: 734117739}
-  life2: {fileID: 1767607504}
-  life3: {fileID: 1653552402}
-  life4: {fileID: 867414662}
-  moveSpeed: 5
-  scrollSpeed: 1
-  xMin: -5.28
-  xMax: 5.04
-  yMin: -3.85
-  yMax: 3.55
-  playerHealth: 4
-  damageCooldownTime: 1
 --- !u!50 &58004877
 Rigidbody2D:
   serializedVersion: 4
@@ -486,6 +462,34 @@ MonoBehaviour:
   basicShots: 1
   rookShots: 0
   bishopShots: 0
+--- !u!114 &58004885
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 58004874}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13d052194c11848e79faa678b7bc261e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  life1: {fileID: 734117739}
+  life2: {fileID: 1767607504}
+  life3: {fileID: 1653552402}
+  life4: {fileID: 867414662}
+  moveSpeed: 5
+  scrollSpeed: 2.5
+  xMin: -5.28
+  xMax: 5.04
+  yMin: -3.85
+  yMax: 3.55
+  playerManager: {fileID: 151335074}
+  bishopHat: {fileID: 9079860387887413381}
+  rookHat: {fileID: 4308584143897533265}
+  queenHat: {fileID: 3057256017498089666}
+  playerHealth: 4
+  damageCooldownTime: 0.05
 --- !u!1 &106868780
 GameObject:
   m_ObjectHideFlags: 0
@@ -2655,7 +2659,7 @@ GameObject:
   - component: {fileID: 4354346342086072938}
   - component: {fileID: 6959408735943796071}
   m_Layer: 12
-  m_Name: queen
+  m_Name: queen1
   m_TagString: queenPowerUp
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2689,7 +2693,7 @@ GameObject:
   - component: {fileID: 4881647212831413081}
   - component: {fileID: 6725482649222232935}
   m_Layer: 12
-  m_Name: rook
+  m_Name: rook1
   m_TagString: rookPowerUp
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2941,7 +2945,7 @@ GameObject:
   - component: {fileID: 2617521770067146838}
   - component: {fileID: 9079860387887413382}
   m_Layer: 12
-  m_Name: bishop
+  m_Name: bishop1
   m_TagString: bishopPowerUp
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

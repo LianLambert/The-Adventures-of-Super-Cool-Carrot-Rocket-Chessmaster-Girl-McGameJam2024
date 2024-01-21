@@ -12,7 +12,7 @@ public class PlayerBulletSpawner : MonoBehaviour
     private bool shooting = false;
     [SerializeField] public bool attachedToPlayer = false;
 
-    private GameObject playerManager;
+    private playerManager playerManager;
     private GameObject bishopHat;
     private GameObject rookHat;
     private GameObject queenHat;
@@ -25,10 +25,7 @@ public class PlayerBulletSpawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        playerManager = GameObject.Find("playerManager");
-        bishopHat = playerManager.GetComponent<playerManager>().bishopHat;
-        rookHat = playerManager.GetComponent<playerManager>().rookHat;
-        queenHat = playerManager.GetComponent<playerManager>().queenHat;
+        playerManager = GameObject.Find("playerManager").GetComponent<playerManager>();
     }
 
     // Update is called once per frame
@@ -58,32 +55,6 @@ public class PlayerBulletSpawner : MonoBehaviour
         {
             shooting = false;
         }
-
-        // check which shooting pattern to apply (basic, rook, bishop, queen)
-        if (queenHat.activeSelf)
-        {
-            basicShots = false;
-            rookShots = true;
-            bishopShots = true;
-        }
-        else if (rookHat.activeSelf)
-        {
-            basicShots = false;
-            rookShots = true;
-            bishopShots = false;
-        }
-        else if (bishopHat.activeSelf)
-        {
-            basicShots = false;
-            rookShots = false;
-            bishopShots = true;
-        }
-        else
-        {
-            basicShots = true;
-            rookShots = false;
-            bishopShots = false;
-        }
     }
 
     void UpdateTimers()
@@ -98,13 +69,13 @@ public class PlayerBulletSpawner : MonoBehaviour
     {
         bulletCooldownTimer = bulletCooldownTime;
 
-        if (basicShots)
+        if (playerManager.mode == "basic")
         {
             GameObject bullet0 = Instantiate(straightPlayerBullet, transform.position, Quaternion.identity);
             bullet0.GetComponent<PlayerBullet>().direction = new Vector3(1, 0, 0).normalized;
             Destroy(bullet0, bulletTime);
         }
-        if (rookShots)
+        if (playerManager.mode == "rook")
         {
             GameObject bulletN = Instantiate(straightPlayerBullet, transform.position, Quaternion.Euler(0, 0, 90));
             bulletN.GetComponent<PlayerBullet>().direction = new Vector3(0, 1, 0).normalized;
@@ -122,7 +93,7 @@ public class PlayerBulletSpawner : MonoBehaviour
             bulletW.GetComponent<PlayerBullet>().direction = new Vector3(-1, 0, 0).normalized;
             Destroy(bulletW, bulletTime);
         }
-        if (bishopShots)
+        if (playerManager.mode == "bishop")
         {
             GameObject bulletNW = Instantiate(diagonalPlayerBullet, transform.position, Quaternion.Euler(0, 0, 90));
             bulletNW.GetComponent<PlayerBullet>().direction = new Vector3(-1, 1, 0).normalized;

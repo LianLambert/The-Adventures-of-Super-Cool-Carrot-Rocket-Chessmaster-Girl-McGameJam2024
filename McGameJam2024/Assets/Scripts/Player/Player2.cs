@@ -4,45 +4,51 @@ using UnityEngine;
 
 public class Player2 : MonoBehaviour
 {
+    [SerializeField] private GameObject bishopHat2;
+    [SerializeField] private GameObject rookHat2;
+    [SerializeField] private GameObject queenHat2;
+
     [SerializeField] private GameObject player1;
     private Player1 p1Script;
+    private playerManager playerManager;
 
+    private Rigidbody2D rb;
+    private float damageCooldownTimer = 0.0f;
+
+    // get info from player1
+    private float damageCooldownTime;
     private float moveSpeed;
     private float scrollSpeed;
     private float xMin;
     private float xMax;
     private float yMin;
     private float yMax;
-    private float damageCooldownTime;
-    private GameObject bishopHat1;
-    private GameObject rookHat1;
-    private GameObject queenHat1;
-    [SerializeField] private GameObject bishopHat2;
-    [SerializeField] private GameObject rookHat2;
-    [SerializeField] private GameObject queenHat2;
-    private Rigidbody2D rb;
-    private float damageCooldownTimer = 0.0f;
+
+    
 
 
     // Start is called before the first frame update
     void Start()
     {
-        player1 = GameObject.Find("player1");
+        // player1 reference
         p1Script = player1.GetComponent<Player1>();
 
+        // playerManager script reference
+        playerManager = p1Script.playerManager;
+        playerManager.OnModeChanged.AddListener(HandleModeChanged);
+
+        // rigid body
+        rb = this.gameObject.GetComponent<Rigidbody2D>();
+        rb.constraints = RigidbodyConstraints2D.FreezeRotation;
+
+        // get info from player1
+        damageCooldownTime = p1Script.damageCooldownTime;
         moveSpeed = p1Script.moveSpeed;
         scrollSpeed = p1Script.scrollSpeed;
         xMin = p1Script.xMin;
         xMax = p1Script.xMax;
         yMin = p1Script.yMin;
         yMax = p1Script.yMax;
-        bishopHat1 = p1Script.bishopHat1;
-        rookHat1 = p1Script.rookHat1;
-        queenHat1 = p1Script.queenHat1;
-        damageCooldownTime = p1Script.damageCooldownTime;
-
-        rb = this.gameObject.GetComponent<Rigidbody2D>();
-        rb.constraints = RigidbodyConstraints2D.FreezeRotation;
     }
 
     // Update is called once per frame
@@ -66,19 +72,19 @@ public class Player2 : MonoBehaviour
         pos.x -= scrollSpeed * Time.deltaTime;
 
 
-        if (Input.GetKey("w"))
+        if (Input.GetKey(KeyCode.UpArrow))
         {
             pos.y += moveSpeed * Time.deltaTime;
         }
-        if (Input.GetKey("a"))
+        if (Input.GetKey(KeyCode.LeftArrow))
         {
             pos.x -= moveSpeed * Time.deltaTime;
         }
-        if (Input.GetKey("s"))
+        if (Input.GetKey(KeyCode.DownArrow))
         {
             pos.y -= moveSpeed * Time.deltaTime;
         }
-        if (Input.GetKey("d"))
+        if (Input.GetKey(KeyCode.RightArrow))
         {
             pos.x += moveSpeed * Time.deltaTime;
         }
@@ -96,35 +102,28 @@ public class Player2 : MonoBehaviour
         // hat collisions
         if (other.gameObject.CompareTag("bishopPowerUp"))
         {
-            
-            bishopHat.SetActive(true);
-            rookHat.SetActive(false);
-            queenHat.SetActive(false);
+            playerManager.ChangeMode("bishop");
             Destroy(other.gameObject);
 
         }
         else if (other.gameObject.CompareTag("rookPowerUp"))
         {
+            playerManager.ChangeMode("rook");
             Destroy(other.gameObject);
-            bishopHat.SetActive(false);
-            rookHat.SetActive(true);
-            queenHat.SetActive(false);
         }
         else if (other.gameObject.CompareTag("queenPowerUp"))
         {
+            playerManager.ChangeMode("queen");
             Destroy(other.gameObject);
-            bishopHat.SetActive(false);
-            rookHat.SetActive(false);
-            queenHat.SetActive(true);
         }
         // enemy collisions (take damage)
         else if (other.gameObject.CompareTag("EnemyBullet") || other.gameObject.CompareTag("Wrench") || other.gameObject.CompareTag("Gear") || other.gameObject.CompareTag("BigGear"))
         {
-            if(damageCooldownTimer <= 0)
+            if (damageCooldownTimer <= 0)
             {
                 StartCoroutine(OnHit());
             }
-                
+
         }
     }
 
@@ -133,26 +132,19 @@ public class Player2 : MonoBehaviour
         // hat collisions
         if (other.gameObject.CompareTag("bishopPowerUp"))
         {
-
-            bishopHat.SetActive(true);
-            rookHat.SetActive(false);
-            queenHat.SetActive(false);
+            playerManager.ChangeMode("bishop");
             Destroy(other.gameObject);
 
         }
         else if (other.gameObject.CompareTag("rookPowerUp"))
         {
+            playerManager.ChangeMode("rook");
             Destroy(other.gameObject);
-            bishopHat.SetActive(false);
-            rookHat.SetActive(true);
-            queenHat.SetActive(false);
         }
         else if (other.gameObject.CompareTag("queenPowerUp"))
         {
+            playerManager.ChangeMode("queen");
             Destroy(other.gameObject);
-            bishopHat.SetActive(false);
-            rookHat.SetActive(false);
-            queenHat.SetActive(true);
         }
         // enemy collisions (take damage)
         else if (other.gameObject.CompareTag("EnemyBullet") || other.gameObject.CompareTag("Wrench") || other.gameObject.CompareTag("Gear") || other.gameObject.CompareTag("BigGear"))
@@ -173,5 +165,33 @@ public class Player2 : MonoBehaviour
         this.gameObject.GetComponent<SpriteRenderer>().enabled = false;
         yield return new WaitForSeconds(0.1f);
         this.gameObject.GetComponent<SpriteRenderer>().enabled = true;
+    }
+
+    private void HandleModeChanged()
+    {
+        if (playerManager.mode == "basic")
+        {
+            bishopHat2.SetActive(false);
+            rookHat2.SetActive(false);
+            queenHat2.SetActive(false);
+        }
+        else if (playerManager.mode == "bishopPowerUp")
+        {
+            bishopHat2.SetActive(true);
+            rookHat2.SetActive(false);
+            queenHat2.SetActive(false);
+        }
+        else if (playerManager.mode == "rookPowerUp")
+        {
+            bishopHat2.SetActive(false);
+            rookHat2.SetActive(true);
+            queenHat2.SetActive(false);
+        }
+        else if (playerManager.mode == "queenPowerUp")
+        {
+            bishopHat2.SetActive(false);
+            rookHat2.SetActive(false);
+            queenHat2.SetActive(true);
+        }
     }
 }
