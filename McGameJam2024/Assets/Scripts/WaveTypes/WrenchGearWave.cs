@@ -35,7 +35,7 @@ public class WrenchGearWave : MonoBehaviour
 
                 // Random Y position on game space
                 float xPos = 10f;
-                float yPos = UnityEngine.Random.Range(0f, 7f) - 3.15f;
+                float yPos = UnityEngine.Random.Range(1f, 6f) - 3.15f;
                 GameObject.Instantiate(wrench, new Vector3(xPos, yPos, 0f), Quaternion.identity);
             }
             yield return new WaitForSeconds(0.5f);
