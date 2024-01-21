@@ -171,6 +171,7 @@ public class Player1 : MonoBehaviour
     public void ReduceHealth()
     {
         playerHealth -= 1;
+        this.gameObject.GetComponent<AudioSource>().PlayOneShot(this.gameObject.GetComponent<AudioSource>().clip);
 
         if(playerHealth == 3)
         {
