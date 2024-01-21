@@ -145,7 +145,7 @@ public class GameManager : MonoBehaviour
             waveType = "wrenchgear";
         }
 
-        else if(rng <= 3 * difficulty + 100)
+        else if(rng <= 3 * difficulty + 20)
         {
             waveType = "biggear";
         }

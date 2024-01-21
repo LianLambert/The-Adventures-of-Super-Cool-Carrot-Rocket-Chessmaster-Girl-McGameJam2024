@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Shifter : MonoBehaviour
+public class BigGear : MonoBehaviour
 {
     // We want access to the GameManager functions from this class.
     [SerializeField] GameManager gameManager;
@@ -31,10 +31,10 @@ public class Shifter : MonoBehaviour
         shootingTime += Time.deltaTime;
 
         // Moving in increments
-        transform.position += new Vector3(-1f,0f,0f) * Time.deltaTime;
+        transform.position += new Vector3(-1f,0f,0f) * 1f * Time.deltaTime;
 
         // Shooting
-        if (shootingTime >= 6f)
+        if (shootingTime >= 5f)
         {
             StartCoroutine(Shoot());
             shootingTime = 0f;
@@ -53,6 +53,12 @@ public class Shifter : MonoBehaviour
 
             GameObject bulletN = Instantiate(saw, transform.position, Quaternion.Euler(0, 0, 90));
             bulletN.GetComponent<EnemyBullet>().direction = new Vector3(0, 1, 0).normalized;
+
+            GameObject bulletE = Instantiate(saw, transform.position, Quaternion.Euler(0, 0, 0));
+            bulletE.GetComponent<EnemyBullet>().direction = new Vector3(1, 0, 0).normalized;
+
+            GameObject bulletW = Instantiate(saw, transform.position, Quaternion.Euler(0, 0, 180));
+            bulletW.GetComponent<EnemyBullet>().direction = new Vector3(-1, 0, 0).normalized;
 
             yield return new WaitForSeconds(0.33f);
         }
