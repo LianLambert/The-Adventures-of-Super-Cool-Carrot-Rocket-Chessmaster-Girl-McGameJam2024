@@ -506,7 +506,7 @@ MonoBehaviour:
   damageCooldownTime: 2
   moveSpeed: 5
   scrollSpeed: 1.5
-  xMin: -4.7
+  xMin: -4.4
   xMax: 4.46
   yMin: -3.8
   yMax: 3.55
@@ -1108,7 +1108,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 170424882}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.0855, y: 5.1247, z: 0}
+  m_LocalPosition: {x: -0.0855, y: 4.5, z: 0}
   m_LocalScale: {x: 17.01985, y: 2.123681, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:

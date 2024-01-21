@@ -27,10 +27,10 @@ public class Player1 : MonoBehaviour
     [SerializeField] public float damageCooldownTime = 0.05f;
     [SerializeField] public float moveSpeed = 5.0f;
     [SerializeField] public float scrollSpeed = 2.5f;
-    [SerializeField] public float xMin = -5.28f;
-    [SerializeField] public float xMax = 5.04f;
-    [SerializeField] public float yMin = -3.85f;
-    [SerializeField] public float yMax = 3.55f;
+    [SerializeField] public float xMin;
+    [SerializeField] public float xMax;
+    [SerializeField] public float yMin;
+    [SerializeField] public float yMax;
 
     // Awake is called before Start() so that reference is initialized
     void Awake()
