@@ -32,6 +32,7 @@ public class playerManager : MonoBehaviour
     {
         wave = amount;
         waveText.text = "Wave: " + wave;
+        this.gameObject.GetComponent<AudioSource>().PlayOneShot(this.gameObject.GetComponent<AudioSource>().clip);
         AddScore(5);
 
     }
