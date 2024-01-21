@@ -66,7 +66,7 @@ public class StickyItem : MonoBehaviour
             {
                 // make this object a child of the player
                 transform.SetParent(collision.gameObject.transform);
-                this.gameObject.GetComponent<PlayerBulletSpawner>().attachedToPlayer = true;
+                this.gameObject.GetComponent<PawnBulletSpawner>().attachedToPlayer = true;
                 stuckToPlayer = true;
 
             }
@@ -76,7 +76,7 @@ public class StickyItem : MonoBehaviour
             {
                 // make this object a child of the other StickyItem
                 transform.SetParent(collision.gameObject.transform);
-                this.gameObject.GetComponent<PlayerBulletSpawner>().attachedToPlayer = true;
+                this.gameObject.GetComponent<PawnBulletSpawner>().attachedToPlayer = true;
                 stuckToPlayer = true;
             }
         }
@@ -127,7 +127,7 @@ public class StickyItem : MonoBehaviour
             {
                 // make this object a child of the player
                 transform.SetParent(collision.gameObject.transform);
-                this.gameObject.GetComponent<PlayerBulletSpawner>().attachedToPlayer = true;
+                this.gameObject.GetComponent<PawnBulletSpawner>().attachedToPlayer = true;
                 stuckToPlayer = true;
 
             }
@@ -137,7 +137,7 @@ public class StickyItem : MonoBehaviour
             {
                 // make this object a child of the other StickyItem
                 transform.SetParent(collision.gameObject.transform);
-                this.gameObject.GetComponent<PlayerBulletSpawner>().attachedToPlayer = true;
+                this.gameObject.GetComponent<PawnBulletSpawner>().attachedToPlayer = true;
                 stuckToPlayer = true;
             }
         }
