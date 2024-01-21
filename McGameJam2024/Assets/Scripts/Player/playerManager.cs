@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class playerManager : MonoBehaviour
 {
@@ -10,7 +11,11 @@ public class playerManager : MonoBehaviour
     [SerializeField] public GameObject queenHat;
     [SerializeField] private TextMeshProUGUI scoreText;
     [SerializeField] private TextMeshProUGUI waveText;
+    [SerializeField] private TextMeshProUGUI gameOverText;
+    [SerializeField] private GameObject gameOverPanel;
     private int score = 0;
+    private int wave = 0;
+    private bool gameOver = false;
 
     public void AddScore(int amount)
     {
@@ -21,11 +26,21 @@ public class playerManager : MonoBehaviour
 
     public void Wave(int amount)
     {
-        waveText.text = "Wave: " + amount;
+        wave = amount;
+        waveText.text = "Wave: " + wave;
 
     }
     public void GameOver()
     {
-
+        gameOver = true;
+        gameOverText.text = "Game Over\n\nScore: " + score + "\nWave: " + wave + "\n\nPress Space to exit";
+        gameOverPanel.SetActive(true);
+    }
+    private void Update()
+    {
+        if(gameOver && Input.GetKeyDown(KeyCode.Space))
+        {
+            SceneManager.LoadScene("TitleScreen");
+        }
     }
 }
