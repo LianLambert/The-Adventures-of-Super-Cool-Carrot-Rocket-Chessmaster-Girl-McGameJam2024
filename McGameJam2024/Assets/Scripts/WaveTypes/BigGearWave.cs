@@ -18,7 +18,7 @@ public class BigGearWave : MonoBehaviour
         Debug.Log("BigGear Wave!");
         // Random Y position on game space
         float xPos = 8f;
-        float yPos = -4f;
+        float yPos = -3.33f;
 
         GameObject.Instantiate(bigGear, new Vector3(xPos, yPos, 0f), Quaternion.identity);
     }
