@@ -506,8 +506,8 @@ MonoBehaviour:
   damageCooldownTime: 2
   moveSpeed: 5
   scrollSpeed: 1.5
-  xMin: -4.57
-  xMax: 4.42
+  xMin: -4.55
+  xMax: 4.34
   yMin: -3.41
   yMax: 2.92
 --- !u!82 &58004886
@@ -2234,7 +2234,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6894961882192675994, guid: f00639fb9f5d380498571dbf2e2ae0b2, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.32
+      value: -0.25
       objectReference: {fileID: 0}
     - target: {fileID: 6894961882192675994, guid: f00639fb9f5d380498571dbf2e2ae0b2, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3467,7 +3467,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2042403370}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 5.16, y: 0, z: 0}
+  m_LocalPosition: {x: 5.27, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 11, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
