@@ -7,19 +7,45 @@ using TMPro;
 
 public class TitleButtons : MonoBehaviour
 {
+    [SerializeField] private Transform Girl;
+    [SerializeField] private Transform Boy;
+    [SerializeField] private CanvasGroup fade;
     [SerializeField] private GameObject singleplayerButton;
     [SerializeField] private GameObject multiplayerButton;
+    private bool anim_finished = false;
     private bool singleplayer = true; 
 
     // Start is called before the first frame update
     void Start()
     {
-        
     }
 
     // Update is called once per frame
     void Update()
     {
+        Vector3 origin = new Vector3(0, 0, 0);
+        if (!anim_finished)
+        {
+            Girl.position = Vector3.MoveTowards(Girl.position, origin, 2f * Time.deltaTime);
+
+            if(Girl.position == origin)
+            {
+                Boy.position = Vector3.MoveTowards(Boy.position, origin, 2f * Time.deltaTime);
+            }
+
+            if(Boy.position == origin)
+            {
+                if(fade.alpha <= 0.65f)
+                {
+                    fade.alpha += 0.002f;
+                }
+            }
+        }
+
+
+
+
+
         if (Input.GetKeyUp(KeyCode.W) || Input.GetKeyUp(KeyCode.UpArrow))
         {
             SetButtonColors(new Color(235 / 255.0f, 148 / 255.0f, 34 / 255.0f), new Color(137 / 255.0f, 137 / 255.0f, 137 / 255.0f));
@@ -42,6 +68,19 @@ public class TitleButtons : MonoBehaviour
             }
         }
     }
+
+    IEnumerator TitleAnimation()
+    {
+        yield return new WaitForSeconds(1f);
+
+        Vector3 origin = new Vector3(0, 0, 0);
+        while(Girl.position != origin)
+        {
+            Girl.position = Vector3.MoveTowards(Girl.position, new Vector3(0, 0, 0), 1.5f * Time.deltaTime);
+        }
+       
+    }
+
 
     void SetButtonColors(Color color1, Color color2)
     {
