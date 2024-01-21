@@ -140,7 +140,7 @@ public class TitleButtons : MonoBehaviour
     IEnumerator Pop(Vector3 origin)
     {
         yield return new WaitForSeconds(0.5f);
-
+        this.gameObject.GetComponent<AudioSource>().PlayOneShot(kenSound);
         Boy.position = origin;
 
     }

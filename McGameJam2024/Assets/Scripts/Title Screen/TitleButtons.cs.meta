@@ -3,7 +3,18 @@ guid: 36b45cc784eb340d291ba7e879ff20e4
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - Girl: {instanceID: 0}
+  - Boy: {instanceID: 0}
+  - fade: {instanceID: 0}
+  - MainTitle: {instanceID: 0}
+  - AndKenTitle: {instanceID: 0}
+  - PressStart: {instanceID: 0}
+  - fade2: {instanceID: 0}
+  - singleplayerButton: {instanceID: 0}
+  - multiplayerButton: {instanceID: 0}
+  - kenSound: {fileID: 8300000, guid: 209a9b679cd5c254192148d018893f77, type: 3}
+  - textSound: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
