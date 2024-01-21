@@ -213,16 +213,16 @@ public class Player2 : MonoBehaviour
 
     IEnumerator BlinkRed()
     {
-        // Store the original color
+        int blinkCount = 3;
         Color originalColor = this.gameObject.GetComponent<SpriteRenderer>().color;
 
-        // Set the sprite to red
-        this.gameObject.GetComponent<SpriteRenderer>().color = new Color(1f, 162f / 255f, 162f / 255f); // FFA2A2
-
-        // Wait for one second
-        yield return new WaitForSeconds(0.1f);
-
-        // Restore the original color
-        this.gameObject.GetComponent<SpriteRenderer>().color = originalColor;
+        for (int i = 0; i < blinkCount; i++)
+        {
+            this.gameObject.GetComponent<SpriteRenderer>().color = new Color(1f, 162f / 255f, 162f / 255f); // FFA2A2
+            yield return new WaitForSeconds(0.1f);
+            this.gameObject.GetComponent<SpriteRenderer>().color = originalColor;
+            yield return new WaitForSeconds(0.1f);
+        }
     }
+
 }
