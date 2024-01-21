@@ -275,6 +275,22 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 4632381890961762859, guid: 57a50f0bc088d9041a9cfcca6baf0381, type: 3}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4632381890961762859, guid: 57a50f0bc088d9041a9cfcca6baf0381, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4632381890961762859, guid: 57a50f0bc088d9041a9cfcca6baf0381, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4632381890961762859, guid: 57a50f0bc088d9041a9cfcca6baf0381, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4632381890961762859, guid: 57a50f0bc088d9041a9cfcca6baf0381, type: 3}
       propertyPath: m_SortingOrder
       value: 5
       objectReference: {fileID: 0}
@@ -479,6 +495,10 @@ MonoBehaviour:
   life2: {fileID: 1767607504}
   life3: {fileID: 1653552402}
   life4: {fileID: 867414662}
+  shooting: 0
+  lastLife:
+    m_PersistentCalls:
+      m_Calls: []
   playerManager: {fileID: 151335075}
   damageCooldownTime: 0.05
   moveSpeed: 5
@@ -1545,7 +1565,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c61ba389945754801b550f610d1e0fac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerManager: {fileID: 0}
+  playerManager: {fileID: 151335075}
 --- !u!61 &744411183
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2027,7 +2047,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c61ba389945754801b550f610d1e0fac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerManager: {fileID: 0}
+  playerManager: {fileID: 151335075}
 --- !u!61 &937053565
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2544,6 +2564,22 @@ PrefabInstance:
       value: 
       objectReference: {fileID: -1395906568, guid: fb100b30b652d204eb476c4382774880, type: 3}
     - target: {fileID: 4632381890961762859, guid: 57a50f0bc088d9041a9cfcca6baf0381, type: 3}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4632381890961762859, guid: 57a50f0bc088d9041a9cfcca6baf0381, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4632381890961762859, guid: 57a50f0bc088d9041a9cfcca6baf0381, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4632381890961762859, guid: 57a50f0bc088d9041a9cfcca6baf0381, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4632381890961762859, guid: 57a50f0bc088d9041a9cfcca6baf0381, type: 3}
       propertyPath: m_SortingOrder
       value: 5
       objectReference: {fileID: 0}
@@ -2561,7 +2597,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5766680046722677861, guid: 57a50f0bc088d9041a9cfcca6baf0381, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6191411714609127400, guid: 57a50f0bc088d9041a9cfcca6baf0381, type: 3}
       propertyPath: m_RootOrder
@@ -2692,7 +2728,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.08327615, y: 0}
+  m_Offset: {x: 0.12061405, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -2703,7 +2739,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.6909425, y: 1}
+  m_Size: {x: 0.6280842, y: 1}
   m_EdgeRadius: 0
 --- !u!50 &1807700852
 Rigidbody2D:
@@ -2748,6 +2784,7 @@ MonoBehaviour:
   rookHat2: {fileID: 744411181}
   queenHat2: {fileID: 937053563}
   player1: {fileID: 58004874}
+  shooting: 0
 --- !u!1 &1909295003
 GameObject:
   m_ObjectHideFlags: 0
@@ -2856,7 +2893,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c61ba389945754801b550f610d1e0fac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerManager: {fileID: 0}
+  playerManager: {fileID: 151335075}
 --- !u!61 &1921525951
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3515,7 +3552,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c61ba389945754801b550f610d1e0fac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerManager: {fileID: 0}
+  playerManager: {fileID: 151335075}
 --- !u!212 &6959408735943796070
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3580,7 +3617,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c61ba389945754801b550f610d1e0fac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerManager: {fileID: 0}
+  playerManager: {fileID: 151335075}
 --- !u!1 &9079860387887413381
 GameObject:
   m_ObjectHideFlags: 0
@@ -3612,4 +3649,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c61ba389945754801b550f610d1e0fac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerManager: {fileID: 0}
+  playerManager: {fileID: 151335075}
