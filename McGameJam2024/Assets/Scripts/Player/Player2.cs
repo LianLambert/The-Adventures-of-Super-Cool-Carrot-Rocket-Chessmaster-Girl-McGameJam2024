@@ -106,17 +106,20 @@ public class Player2 : MonoBehaviour
         if (other.gameObject.CompareTag("bishopPowerUp"))
         {
             playerManager.ChangeMode("bishop");
+            playerManager.AddScore(10);
             Destroy(other.gameObject);
 
         }
         else if (other.gameObject.CompareTag("rookPowerUp"))
         {
             playerManager.ChangeMode("rook");
+            playerManager.AddScore(10);
             Destroy(other.gameObject);
         }
         else if (other.gameObject.CompareTag("queenPowerUp"))
         {
             playerManager.ChangeMode("queen");
+            playerManager.AddScore(10);
             Destroy(other.gameObject);
         }
         // enemy collisions (take damage)
@@ -136,17 +139,20 @@ public class Player2 : MonoBehaviour
         if (other.gameObject.CompareTag("bishopPowerUp"))
         {
             playerManager.ChangeMode("bishop");
+            playerManager.AddScore(10);
             Destroy(other.gameObject);
 
         }
         else if (other.gameObject.CompareTag("rookPowerUp"))
         {
             playerManager.ChangeMode("rook");
+            playerManager.AddScore(10);
             Destroy(other.gameObject);
         }
         else if (other.gameObject.CompareTag("queenPowerUp"))
         {
             playerManager.ChangeMode("queen");
+            playerManager.AddScore(10);
             Destroy(other.gameObject);
         }
         // enemy collisions (take damage)
