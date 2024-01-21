@@ -16,6 +16,7 @@ public class GameManager : MonoBehaviour
     public int powerupRate = 2;
     public int weaponRate = 2;
     public int waveCounter = 0;
+    public float powerupTimer = 3f;
 
     // Prefabs
     [SerializeField] GameObject bishopPowerup;
@@ -26,6 +27,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] WrenchWave wrenchWave;
     [SerializeField] GearWave gearWave;
     [SerializeField] WrenchGearWave wrenchgear;
+    [SerializeField] BigGearWave bigGear;
 
     // Start is called before the first frame update
     void Start()
@@ -34,6 +36,7 @@ public class GameManager : MonoBehaviour
         wrenchWave = GetComponent<WrenchWave>();
         gearWave = GetComponent<GearWave>();
         wrenchgear = GetComponent<WrenchGearWave>();
+        bigGear = GetComponent<BigGearWave>();
     }
 
     // Update is called once per frame
@@ -64,6 +67,10 @@ public class GameManager : MonoBehaviour
 
                 case "wrenchgear":
                     wrenchgear.Wave();
+                    break;
+
+                case "biggear":
+                    bigGear.Wave();
                     break;
 
             }
@@ -99,19 +106,22 @@ public class GameManager : MonoBehaviour
                 // Rook powerup
                 if(rng <= 45)
                 {
-                    GameObject.Instantiate(rookPowerup, enemyPos, enemyQuat);
+                    GameObject powerup = GameObject.Instantiate(rookPowerup, enemyPos, enemyQuat);
+                    Destroy(powerup, powerupTimer);
                 }
 
                 // Bishop powerup
                 if(rng <= 90 && rng > 45)
                 {
-                    GameObject.Instantiate(bishopPowerup, enemyPos, enemyQuat);
+                    GameObject powerup = GameObject.Instantiate(bishopPowerup, enemyPos, enemyQuat);
+                    Destroy(powerup, powerupTimer);
                 }
 
                 // Queen powerup
                 if(rng > 90)
                 {
-                    GameObject.Instantiate(queenPowerup,  enemyPos, enemyQuat);
+                    GameObject powerup = GameObject.Instantiate(queenPowerup, enemyPos, enemyQuat);
+                    Destroy(powerup, powerupTimer);
                 }
             }
 
@@ -130,12 +140,17 @@ public class GameManager : MonoBehaviour
             waveType = "all";
         }
 
-        else if (rng <= 4 * difficulty + 15)
+        else if (rng <= 3 * difficulty + 15)
         {
             waveType = "wrenchgear";
         }
 
-        if (rng <= 5 * difficulty + 20)
+        else if(rng <= 3 * difficulty + 100)
+        {
+            waveType = "biggear";
+        }
+
+        else if (rng <= 5 * difficulty + 20)
         {
             waveType = "gear";
         }

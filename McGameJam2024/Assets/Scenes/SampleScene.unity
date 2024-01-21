@@ -872,6 +872,7 @@ GameObject:
   - component: {fileID: 467110894}
   - component: {fileID: 467110897}
   - component: {fileID: 467110898}
+  - component: {fileID: 467110899}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -911,12 +912,14 @@ MonoBehaviour:
   powerupRate: 2
   weaponRate: 2
   waveCounter: 0
+  powerupTimer: 3
   bishopPowerup: {fileID: 967752983836490606, guid: 4e5ff25ffaf464491b44b3802e314764, type: 3}
   rookPowerup: {fileID: 8174712753057265857, guid: d7592085a6ee54deda39992e19408514, type: 3}
   queenPowerup: {fileID: 7406845137406750012, guid: 8b4a5623c56f841f7aacd7ce8170bb05, type: 3}
   wrenchWave: {fileID: 467110894}
   gearWave: {fileID: 467110897}
   wrenchgear: {fileID: 467110898}
+  bigGear: {fileID: 0}
 --- !u!4 &467110896
 Transform:
   m_ObjectHideFlags: 0
@@ -959,6 +962,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gear: {fileID: 3703071966299524341, guid: 4c9f7325ea4edca4a8196d4fcf1d17b8, type: 3}
   wrench: {fileID: 5197093029153576782, guid: adafd97153f9d2f41a45bc40f2281779, type: 3}
+--- !u!114 &467110899
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 467110893}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e75482ba85d44cb4f99097e62e994ff4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bigGear: {fileID: 1407386639029919473, guid: 79d23e8fa8204a64db17d8db031028fd, type: 3}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0

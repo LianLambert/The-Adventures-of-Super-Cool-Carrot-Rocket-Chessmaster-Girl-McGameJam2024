@@ -9,7 +9,6 @@ public class Shifter : MonoBehaviour
 
     // Enemy fields
     private int health = 4;
-    private float time = 0f;
     private float shootingTime = 0f; 
 
     // Prefabs
@@ -29,11 +28,10 @@ public class Shifter : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        time += Time.deltaTime;
         shootingTime += Time.deltaTime;
 
         // Moving in increments
-        transform.position += Vector3.left * 0.5f * time;
+        transform.position += new Vector3(-1f,0f,0f) * Time.deltaTime;
 
         // Shooting
         if (shootingTime >= 6f)

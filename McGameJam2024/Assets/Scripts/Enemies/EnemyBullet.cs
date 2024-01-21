@@ -15,7 +15,6 @@ public class EnemyBullet : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.collider.gameObject.CompareTag("PlayerBullet") ||
-            collision.collider.gameObject.CompareTag("Wall") ||
                 collision.collider.gameObject.CompareTag("Player"))
         {
             GameObject.Destroy(this.gameObject);
@@ -28,5 +27,10 @@ public class EnemyBullet : MonoBehaviour
         {
             GameObject.Destroy(this.gameObject);
         }
+    }
+
+    private void OnBecameInvisible()
+    {
+        Destroy(this.gameObject);
     }
 }
