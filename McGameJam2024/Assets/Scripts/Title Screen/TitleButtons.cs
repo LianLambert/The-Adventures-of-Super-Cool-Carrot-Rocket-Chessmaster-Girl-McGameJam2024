@@ -28,6 +28,7 @@ public class TitleButtons : MonoBehaviour
         {
             Girl.position = Vector3.MoveTowards(Girl.position, origin, 2f * Time.deltaTime);
 
+            if(Girl.position == origin)
             {
                 Boy.position = Vector3.MoveTowards(Boy.position, origin, 2f * Time.deltaTime);
             }
