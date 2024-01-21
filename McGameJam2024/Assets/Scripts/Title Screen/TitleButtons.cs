@@ -20,6 +20,7 @@ public class TitleButtons : MonoBehaviour
     private bool anim_finished = false;
     private bool allcond = false;
     private bool singleplayer = true;
+    private bool ken = false;
 
     // Audio
     [SerializeField] AudioClip kenSound;
@@ -38,9 +39,10 @@ public class TitleButtons : MonoBehaviour
         {
             Girl.position = Vector3.MoveTowards(Girl.position, origin, 2f * Time.deltaTime);
 
-            if(Girl.position == origin)
+            if(Girl.position == origin && !ken)
             {
                 StartCoroutine(Pop(origin));
+                ken = true;
             }
 
             if(Boy.position == origin)
@@ -140,8 +142,8 @@ public class TitleButtons : MonoBehaviour
     IEnumerator Pop(Vector3 origin)
     {
         yield return new WaitForSeconds(0.5f);
-        this.gameObject.GetComponent<AudioSource>().PlayOneShot(kenSound);
         Boy.position = origin;
+        this.gameObject.GetComponent<AudioSource>().PlayOneShot(kenSound);
 
     }
 

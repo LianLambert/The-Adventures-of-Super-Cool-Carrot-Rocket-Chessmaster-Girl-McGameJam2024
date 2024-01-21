@@ -47,6 +47,10 @@ public class Player1 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (playerManager.gameOver)
+        {
+            this.gameObject.SetActive(false);
+        }
         UpdateTimers();
         UpdateMovement();
         CheckShooting();

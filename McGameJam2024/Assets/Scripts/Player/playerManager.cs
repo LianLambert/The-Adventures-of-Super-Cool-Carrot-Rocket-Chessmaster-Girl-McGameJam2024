@@ -15,7 +15,7 @@ public class playerManager : MonoBehaviour
     [SerializeField] private AudioClip gameOverAudio;
     private int score = 0;
     private int wave = 0;
-    private bool gameOver = false;
+    public bool gameOver = false;
     public string mode = "basic";
 
     // UnityEvent for the mode change
@@ -23,17 +23,23 @@ public class playerManager : MonoBehaviour
 
     public void AddScore(int amount)
     {
-        score += amount;
-        scoreText.text = "Score: " + score;
-        
+        if(!gameOver)
+        {
+            score += amount;
+            scoreText.text = "Score: " + score;
+        }
     }
 
     public void Wave(int amount)
     {
-        wave = amount;
-        waveText.text = "Wave: " + wave;
-        this.gameObject.GetComponent<AudioSource>().PlayOneShot(this.gameObject.GetComponent<AudioSource>().clip);
-        AddScore(5);
+        if (!gameOver)
+        {
+            wave = amount;
+            waveText.text = "Wave: " + wave;
+            this.gameObject.GetComponent<AudioSource>().PlayOneShot(this.gameObject.GetComponent<AudioSource>().clip);
+            AddScore(5);
+        }
+        
 
     }
     public void GameOver()
@@ -41,7 +47,8 @@ public class playerManager : MonoBehaviour
         gameOver = true;
         gameOverText.text = "Game Over\n\nScore: " + score + "\nWave: " + wave + "\n\nPress Space to exit";
         gameOverPanel.SetActive(true);
-        mainCamera.GetComponent<AudioSource>().clip = gameOverAudio;
+        mainCamera.GetComponent<AudioSource>().Stop();
+        mainCamera.GetComponent<AudioSource>().PlayOneShot(gameOverAudio);
     }
     private void Update()
     {
