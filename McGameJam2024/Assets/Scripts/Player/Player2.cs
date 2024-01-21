@@ -200,11 +200,11 @@ public class Player2 : MonoBehaviour
     void CheckShooting()
     {
         // check if the player is holding the shooting key
-        if (Input.GetKeyDown(KeyCode.RightCommand))
+        if (Input.GetKeyDown(KeyCode.RightShift))
         {
             shooting = true;
         }
-        else if (Input.GetKeyUp(KeyCode.RightCommand))
+        else if (Input.GetKeyUp(KeyCode.RightShift))
         {
             shooting = false;
         }
