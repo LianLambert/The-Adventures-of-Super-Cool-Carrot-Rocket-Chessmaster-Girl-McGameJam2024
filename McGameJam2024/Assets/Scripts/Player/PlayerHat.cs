@@ -4,13 +4,8 @@ using UnityEngine;
 
 public class PlayerHat : MonoBehaviour
 {
-    private Player1 p1Script;
     [SerializeField] private playerManager playerManager;
 
-    private void Start()
-    {
-        playerManager = p1Script.playerManager;
-    }
     /* hat collisions have been disabled between:
         hat and hat
         hat and player
