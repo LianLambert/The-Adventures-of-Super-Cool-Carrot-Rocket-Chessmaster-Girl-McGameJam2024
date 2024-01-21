@@ -22,7 +22,11 @@ public class Wrench : MonoBehaviour
     void Start()
     {
         health = 2 + gameManager.difficulty;
-        rb.velocity = new Vector2(-2f, 0f);
+    }
+
+    void Update()
+    {
+        transform.position += new Vector3(-1f, 0f, 0f) * Time.deltaTime * 2f;
     }
 
     // Behaviour when the enemy is hit
