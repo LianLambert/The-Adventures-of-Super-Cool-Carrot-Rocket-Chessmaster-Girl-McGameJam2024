@@ -34,7 +34,7 @@ TagManager:
   - Gear
   - Enemy Bullets
   - Big Gear
-  - 
+  - StickyItems
   - 
   - 
   - 
@@ -73,6 +73,9 @@ TagManager:
     locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: PlayerBullets
+    uniqueID: 748004757
     locked: 0
   - name: UI
     uniqueID: 1674543679
