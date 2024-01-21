@@ -17,6 +17,7 @@ public class Player1 : MonoBehaviour
 
     private Rigidbody2D rb;
     private float damageCooldownTimer = 0.0f;
+    public bool shooting = false;
 
     // info for player2
     public playerManager playerManager;
@@ -46,6 +47,7 @@ public class Player1 : MonoBehaviour
     {
         UpdateTimers();
         UpdateMovement();
+        CheckShooting();
     }
 
     void UpdateTimers()
@@ -188,23 +190,36 @@ public class Player1 : MonoBehaviour
             rookHat1.SetActive(false);
             queenHat1.SetActive(false);
         }
-        else if(playerManager.mode == "bishopPowerUp")
+        else if(playerManager.mode == "bishop")
         {
             bishopHat1.SetActive(true);
             rookHat1.SetActive(false);
             queenHat1.SetActive(false);
         }
-        else if (playerManager.mode == "rookPowerUp")
+        else if (playerManager.mode == "rook")
         {
             bishopHat1.SetActive(false);
             rookHat1.SetActive(true);
             queenHat1.SetActive(false);
         }
-        else if (playerManager.mode == "queenPowerUp")
+        else if (playerManager.mode == "queen")
         {
             bishopHat1.SetActive(false);
             rookHat1.SetActive(false);
             queenHat1.SetActive(true);
+        }
+    }
+
+    void CheckShooting()
+    {
+        // check if the player is holding the shooting key
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            shooting = true;
+        }
+        else if (Input.GetKeyUp(KeyCode.Space))
+        {
+            shooting = false;
         }
     }
 }

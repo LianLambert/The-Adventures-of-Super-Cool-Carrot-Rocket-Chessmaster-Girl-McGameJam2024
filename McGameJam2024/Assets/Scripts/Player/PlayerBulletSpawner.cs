@@ -13,7 +13,7 @@ public class PlayerBulletSpawner : MonoBehaviour
     [SerializeField] private float bulletTime = 10.0f;
     [SerializeField] private float bulletCooldownTime = 0.05f;
     private float bulletCooldownTimer = 0.0f;
-    private bool shooting = false;
+    private bool playerShooting = false;
 
     
 
@@ -31,7 +31,7 @@ public class PlayerBulletSpawner : MonoBehaviour
             UpdateTimers();
             CheckShooting();
 
-            if (shooting && bulletCooldownTimer <= 0)
+            if (playerShooting && bulletCooldownTimer <= 0)
             {
                 Shoot();
             }
@@ -41,14 +41,13 @@ public class PlayerBulletSpawner : MonoBehaviour
 
     void CheckShooting()
     {
-        // check if the player is holding the shooting key
-        if (Input.GetKeyDown(KeyCode.Space))
+        if(this.gameObject.GetComponent<Player1>() != null)
         {
-            shooting = true;
+            playerShooting = this.gameObject.GetComponent<Player1>().shooting;
         }
-        else if (Input.GetKeyUp(KeyCode.Space))
+        else if(this.gameObject.gameObject.GetComponent<Player2>() != null)
         {
-            shooting = false;
+            playerShooting = this.gameObject.GetComponent<Player2>().shooting;
         }
     }
 
