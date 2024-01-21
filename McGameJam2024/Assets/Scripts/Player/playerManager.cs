@@ -30,6 +30,7 @@ public class playerManager : MonoBehaviour
     {
         wave = amount;
         waveText.text = "Wave: " + wave;
+        AddScore(5);
 
     }
     public void GameOver()

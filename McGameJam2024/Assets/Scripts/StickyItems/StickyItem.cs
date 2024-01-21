@@ -26,17 +26,20 @@ public class StickyItem : MonoBehaviour
             if (collision.gameObject.CompareTag("bishopPowerUp"))
             {
                 playerManager.ChangeMode("bishop");
+                playerManager.AddScore(10);
                 Destroy(collision.gameObject);
 
             }
             else if (collision.gameObject.CompareTag("rookPowerUp"))
             {
                 playerManager.ChangeMode("rook");
+                playerManager.AddScore(10);
                 Destroy(collision.gameObject);
             }
             else if (collision.gameObject.CompareTag("queenPowerUp"))
             {
                 playerManager.ChangeMode("queen");
+                playerManager.AddScore(10);
                 Destroy(collision.gameObject);
             }
             // if hit by an enemy or enemy bullet, destroy it along with its chilren
@@ -62,6 +65,7 @@ public class StickyItem : MonoBehaviour
             if (collision.gameObject.CompareTag("StickyItem") && collision.gameObject.GetComponent<StickyItem>().stuckToPlayer)
             {
                 // make this object a child of the other StickyItem
+                playerManager.AddScore(5);
                 transform.SetParent(collision.gameObject.transform);
                 this.gameObject.GetComponent<PawnBulletSpawner>().attachedToPlayer = true;
                 stuckToPlayer = true;
@@ -80,17 +84,20 @@ public class StickyItem : MonoBehaviour
             if (collision.gameObject.CompareTag("bishopPowerUp"))
             {
                 playerManager.ChangeMode("bishop");
+                playerManager.AddScore(10);
                 Destroy(collision.gameObject);
 
             }
             else if (collision.gameObject.CompareTag("rookPowerUp"))
             {
                 playerManager.ChangeMode("rook");
+                playerManager.AddScore(10);
                 Destroy(collision.gameObject);
             }
             else if (collision.gameObject.CompareTag("queenPowerUp"))
             {
                 playerManager.ChangeMode("queen");
+                playerManager.AddScore(10);
                 Destroy(collision.gameObject);
             }
             // if hit by an enemy or enemy bullet, destroy it along with its chilren
@@ -116,6 +123,7 @@ public class StickyItem : MonoBehaviour
             if (collision.gameObject.CompareTag("StickyItem") && collision.gameObject.GetComponent<StickyItem>().stuckToPlayer)
             {
                 // make this object a child of the other StickyItem
+                playerManager.AddScore(5);
                 transform.SetParent(collision.gameObject.transform);
                 this.gameObject.GetComponent<PawnBulletSpawner>().attachedToPlayer = true;
                 stuckToPlayer = true;
