@@ -4,22 +4,17 @@ using UnityEngine;
 
 public class PlayerBulletSpawner : MonoBehaviour
 {
+    private playerManager playerManager;
+
     [SerializeField] private GameObject straightPlayerBullet;
     [SerializeField] private GameObject diagonalPlayerBullet;
+    [SerializeField] public bool attachedToPlayer = false;
+
     [SerializeField] private float bulletTime = 10.0f;
     [SerializeField] private float bulletCooldownTime = 0.05f;
     private float bulletCooldownTimer = 0.0f;
     private bool shooting = false;
-    [SerializeField] public bool attachedToPlayer = false;
 
-    private playerManager playerManager;
-    private GameObject bishopHat;
-    private GameObject rookHat;
-    private GameObject queenHat;
-    [SerializeField] private bool basicShots = true;
-    [SerializeField] private bool rookShots = false;
-    [SerializeField] private bool bishopShots = false;
-    
     
 
     // Start is called before the first frame update

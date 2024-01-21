@@ -7,9 +7,6 @@ public class StickyItem : MonoBehaviour
 {
     public bool stuckToPlayer = false;
     private playerManager playerManager;
-    private GameObject bishopHat;
-    private GameObject rookHat;
-    private GameObject queenHat;
 
     // Start is called before the first frame update
     void Start()
