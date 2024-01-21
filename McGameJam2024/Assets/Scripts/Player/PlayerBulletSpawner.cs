@@ -69,7 +69,7 @@ public class PlayerBulletSpawner : MonoBehaviour
             bullet0.GetComponent<PlayerBullet>().direction = new Vector3(1, 0, 0).normalized;
             Destroy(bullet0, bulletTime);
         }
-        if (playerManager.mode == "rook")
+        if (playerManager.mode == "rook" || playerManager.mode == "queen")
         {
             GameObject bulletN = Instantiate(straightPlayerBullet, transform.position, Quaternion.Euler(0, 0, 90));
             bulletN.GetComponent<PlayerBullet>().direction = new Vector3(0, 1, 0).normalized;
@@ -87,7 +87,7 @@ public class PlayerBulletSpawner : MonoBehaviour
             bulletW.GetComponent<PlayerBullet>().direction = new Vector3(-1, 0, 0).normalized;
             Destroy(bulletW, bulletTime);
         }
-        if (playerManager.mode == "bishop")
+        if (playerManager.mode == "bishop" || playerManager.mode == "queen")
         {
             GameObject bulletNW = Instantiate(diagonalPlayerBullet, transform.position, Quaternion.Euler(0, 0, 90));
             bulletNW.GetComponent<PlayerBullet>().direction = new Vector3(-1, 1, 0).normalized;
