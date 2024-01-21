@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Player1 : MonoBehaviour
 {
@@ -20,6 +21,7 @@ public class Player1 : MonoBehaviour
     public bool shooting = false;
 
     // info for player2
+    public UnityEvent lastLife;
     public playerManager playerManager;
 
     [SerializeField] public float damageCooldownTime = 0.05f;
@@ -173,7 +175,9 @@ public class Player1 : MonoBehaviour
         }
         else if (playerHealth == 1)
         {
-            life2.SetActive(false);
+            life2.SetActive(false); 
+            lastLife.Invoke(); 
+            StartCoroutine(BlinkRed());
         }
         else if (playerHealth == 0)
         {
@@ -221,5 +225,20 @@ public class Player1 : MonoBehaviour
         {
             shooting = false;
         }
+    }
+
+    IEnumerator BlinkRed()
+    {
+        // Store the original color
+        Color originalColor = this.gameObject.GetComponent<SpriteRenderer>().color;
+
+        // Set the sprite to red
+        this.gameObject.GetComponent<SpriteRenderer>().color = new Color(1f, 162f / 255f, 162f / 255f); // FFA2A2
+
+        // Wait for one second
+        yield return new WaitForSeconds(0.1f);
+
+        // Restore the original color
+        this.gameObject.GetComponent<SpriteRenderer>().color = originalColor;
     }
 }

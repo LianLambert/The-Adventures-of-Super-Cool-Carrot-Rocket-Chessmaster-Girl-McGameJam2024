@@ -105,8 +105,5 @@ public class PlayerBulletSpawner : MonoBehaviour
             bulletSW.GetComponent<PlayerBullet>().direction = new Vector3(-1, -1, 0).normalized;
             Destroy(bulletSW, bulletTime);
         }
-
-        
-
     }
 }
