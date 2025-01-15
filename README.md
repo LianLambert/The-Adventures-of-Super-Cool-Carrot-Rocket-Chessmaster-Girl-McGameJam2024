@@ -19,7 +19,9 @@ We hope you'll enjoy this simple high score schmup game!!!
 - **Player 2:** Arrow keys + period button
 
 ### Gameplay Overview:
-- **Goal:** Survive! As long as possible
+- **Goal:** Survive! As long as possible with your 4 lives
+- **Hats:** Collect and try on chess-inspired hats to improve your shooting patterns!
+- **Pawns:** Pawns stick to you and other pawns, allowing you to build up your contraption! They only shoot diagonally.
 
 ### Screenshots:
 <img src="singlePlayer.png" width="400px" align="left">
