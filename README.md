@@ -1,6 +1,6 @@
 # The Adventures of Super Cool Carrot Rocket Chessmaster Girl
 
-Submitted for [McGameJam 2024](https://itch.io/jam/mcgamejam-2024/entries) and Awarded Best Gameplay by Ubisoft
+Submitted for [McGameJam 2024](https://itch.io/jam/mcgamejam-2024/entries) (Theme: Contraption) and Awarded Best Gameplay by Ubisoft
 
 Find the game on [Itch.io](https://lianl.itch.io/the-adventures-of-super-cool-carrot-rocket-chessmaster-girl)!
 
