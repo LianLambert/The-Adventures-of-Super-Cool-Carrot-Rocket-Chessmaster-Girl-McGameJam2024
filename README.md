@@ -2,8 +2,7 @@
 
 Submitted for [McGameJam 2024](https://itch.io/jam/mcgamejam-2024/entries) (Theme: Contraption) and Awarded Best Gameplay by Ubisoft
 
-Find the game on [Itch.io](https://lianl.itch.io/the-adventures-of-super-cool-carrot-rocket-chessmaster-girl)!
-Watch a demo [here](https://www.youtube.com/watch?v=ISyCelCeTNc&ab_channel=Lian)!
+Find the game on [Itch.io](https://lianl.itch.io/the-adventures-of-super-cool-carrot-rocket-chessmaster-girl) or watch a demo [here](https://www.youtube.com/watch?v=ISyCelCeTNc&ab_channel=Lian)!
 
 Made using Unity
 
